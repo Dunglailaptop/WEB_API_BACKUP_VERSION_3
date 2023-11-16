@@ -4602,11 +4602,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nguyenxuantiendung/Documents/webServer_api_movie/MyCinema/MyCinema.csproj",
+      "projectUniqueName": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/MyCinema.csproj",
       "projectName": "MyCinema",
-      "projectPath": "/Users/nguyenxuantiendung/Documents/webServer_api_movie/MyCinema/MyCinema.csproj",
+      "projectPath": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/MyCinema.csproj",
       "packagesPath": "/Users/nguyenxuantiendung/.nuget/packages/",
-      "outputPath": "/Users/nguyenxuantiendung/Documents/webServer_api_movie/MyCinema/obj/",
+      "outputPath": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nguyenxuantiendung/.nuget/NuGet/NuGet.Config"

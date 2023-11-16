@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gIAGFXm3BDHCWzBc6tSxwXDXTtFGVrziBoT4nH8EenFXBCGgZW6xmEHAB+Op5ZYV4NEwOo3TyGigYPAGqoQIXw==",
+  "dgSpecHash": "GNHqHTrwGYTDWj/Y/bjOV7YtfY9zMuR3EIHXRvcKSnS38speI54ZMbg/ARUY19Xbj6gw6U1nQi5YcVucMxO/cg==",
   "success": true,
-  "projectFilePath": "/Users/nguyenxuantiendung/Documents/webServer_api_movie/MyCinema/MyCinema.csproj",
+  "projectFilePath": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/MyCinema.csproj",
   "expectedPackageFiles": [
     "/Users/nguyenxuantiendung/.nuget/packages/google.protobuf/3.21.9/google.protobuf.3.21.9.nupkg.sha512",
     "/Users/nguyenxuantiendung/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
