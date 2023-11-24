@@ -432,6 +432,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Movie\4B95DE9D-A503-46BE-9145-9B4EE173DBFD.jpeg\4B95DE9D-A503-46BE-9145-9B4EE173DBFD.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Movie\4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg\4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>MyCinema</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MyCinema</BasePath>
+      <RelativePath>Uploads/Movie/4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg/4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Movie\4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg\4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Movie\4E2B4A93-6F28-4634-8479-C657AFD6A622.jpeg\4E2B4A93-6F28-4634-8479-C657AFD6A622.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>MyCinema</SourceId>

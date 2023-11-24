@@ -266,6 +266,22 @@ public IActionResult getInfoPointAccount(long? iduser)
  return Ok(successApiResponse);
 }
 
+[HttpGet("checkaccount")]
+public IActionResult checkaccount(string username){
+    var successApiResponse = new ApiResponse();
+    var dataccountcheck = _context.Accounts.Where(x=>x.Username == username).SingleOrDefault();
+    if (dataccountcheck != null){
+            successApiResponse.Status = 500;
+            successApiResponse.Message = "Tài khoản đã tồn tại";
+            successApiResponse.Data = "Error";
+    }else {
+            successApiResponse.Status = 200;
+            successApiResponse.Message = "OK";
+            successApiResponse.Data = "ACCOUNT SUCCESS";
+    }
+    return Ok(successApiResponse);
+}
+
 // API CREATE ACCOUNT
 // Create a single instance of SmtpClient and reuse it
 private static readonly SmtpClient _smtp = new SmtpClient("smtp.gmail.com")
@@ -281,7 +297,7 @@ public async Task<IActionResult> SendOTPInEmail(string emails)
 {
     // // Initialize API response
     var successApiResponse = new ApiResponse();
-
+    // var dataaccount = _context.Accounts.Where(x=>x.Username == Username).SingleOrDefault();
     // Header
     // string token = Request.Headers["token"];
     string filterHeaderValue2 = Request.Headers["ProjectId"];
@@ -289,7 +305,7 @@ public async Task<IActionResult> SendOTPInEmail(string emails)
     string expectedToken = ValidHeader.Token;
     string method = Convert.ToString(ValidHeader.MethodGet);
     string projectId = Convert.ToString(ValidHeader.Project_id);
-
+   
     // Check header
     if ( //string.IsNullOrEmpty(token) ||
       string.IsNullOrEmpty(filterHeaderValue2) || string.IsNullOrEmpty(filterHeaderValue3))
@@ -306,8 +322,9 @@ public async Task<IActionResult> SendOTPInEmail(string emails)
         }
         else
         {
-            try
-            {
+            // if (dataaccount == null) {
+             try
+                {
                 // Validate email address
                 if (!IsValidEmail(emails))
                 {
@@ -345,7 +362,7 @@ public async Task<IActionResult> SendOTPInEmail(string emails)
 
 
                     successApiResponse.Status = 200;
-                    successApiResponse.Message = "OK";
+                    successApiResponse.Message = "Gửi mã OTP Email thành công";
                     successApiResponse.Data = "Code sent successfully";
                 }
                 catch (SmtpException ex)
@@ -361,10 +378,22 @@ public async Task<IActionResult> SendOTPInEmail(string emails)
                 // Handle invalid email format exception
                 return BadRequest("Invalid email address format.");
             }
+            // }else {
+            //         successApiResponse.Status = 500; // Internal Server Error
+            //         successApiResponse.Message = "Tên tài khoản đã tồn tại";
+            //         successApiResponse.Data = "error";
+            // }
+          
         }
     }
 
     return Ok(successApiResponse);
+}
+
+public class iduser: userAdd {
+    public long? id {get;set;}
+
+    
 }
 
 public class userAdd {
@@ -374,40 +403,70 @@ public class userAdd {
 
     public string fullname {get;set;}
 
-    public string email {get;set;}
+    public string emails {get;set;}
+
+    public string enteredOTP {get;set;}
 }
 
-[HttpPost("CreateAccounts")]
-public IActionResult createAccounts(userAdd user){
+[HttpGet("ForgotPasssword")]
+public IActionResult FindAccount(string username) {
+     var successApiResponse = new ApiResponse();
+     var dataaccount = _context.Accounts.Where(x=>x.Username == username).SingleOrDefault();
+     var userresponse = new iduser();
+     if (dataaccount != null) {
+        var dataemails = _context.Users.Where(x=>x.Idusers == dataaccount.Idusers).SingleOrDefault();
+        userresponse.id = dataemails.Idusers;
+        userresponse.username = dataaccount.Username;
+        userresponse.emails = dataemails.Email;
+          successApiResponse.Status = 200; // Internal Server Error
+                successApiResponse.Message = "OK";
+                successApiResponse.Data = userresponse;
+     }else {
+           successApiResponse.Status = 500; // Internal Server Error
+                successApiResponse.Message = "Tài khoản không tồn tại";
+                successApiResponse.Data = "Tài khoản không tồn tại";
+     }
+     return Ok(successApiResponse);
+}
+
+// [HttpPost("CreateAccounts")]
+// public IActionResult createAccounts(userAdd user){
   
-   var successApiResponse = new ApiResponse();
+//    var successApiResponse = new ApiResponse();
+//      var dataccountcheck = _context.Accounts.Where(x=>x.Username == user.username).SingleOrDefault();
+//      if (dataccountcheck != null) {
+//              successApiResponse.Status = 500; // Internal Server Error
+//                 successApiResponse.Message = "Tài khoản đã tồn tại ";
+//                 successApiResponse.Data = "Tạo tài khoản thất bại";
+//      }else{
+//                 var users = new User();
+//                 users.Fullname = user.fullname;
+//                 users.Email = user.email;
+//                 users.Idrole = 1;
+//                 _context.Users.Add(users);
+//                 _context.SaveChanges();
 
-   var users = new User();
-   users.Fullname = user.fullname;
-   users.Email = user.email;
-   users.Idrole = 1;
-   _context.Users.Add(users);
-   _context.SaveChanges();
+//                 if (users.Idusers != 0) {
+//                 var account  = new Account();
+//                 //  account.Idusers = users.Idusers;
+//                 account.Username = user.username;
+//                 account.Password = user.passwords;
+//                 account.points = 0;
+//                 _context.Accounts.Add(account);
+//                 _context.SaveChanges();
+//                 successApiResponse.Status = 200; // Internal Server Error
+//                 successApiResponse.Message = "OK";
+//                 successApiResponse.Data = account.Username;
 
-   if (users.Idusers != 0) {
-     var account  = new Account();
-     account.Idusers = users.Idusers;
-     account.Username = user.username;
-     account.Password = user.passwords;
-     account.points = 0;
-     _context.Accounts.Add(account);
-     _context.SaveChanges();
-        successApiResponse.Status = 200; // Internal Server Error
-        successApiResponse.Message = "OK";
-        successApiResponse.Data = account;
-
-   }else {
-        successApiResponse.Status = 500; // Internal Server Error
-        successApiResponse.Message = "error";
-        successApiResponse.Data = "Tạo tài khoản thất bại";
-   }
-   return Ok(successApiResponse);
-}
+//                 }else {
+//                 successApiResponse.Status = 500; // Internal Server Error
+//                 successApiResponse.Message = "error";
+//                 successApiResponse.Data = "Tạo tài khoản thất bại";
+//                 }
+//      }
+  
+//    return Ok(successApiResponse);
+// }
 
 
 // Validate email address using a regular expression
@@ -423,8 +482,41 @@ private bool IsValidEmail(string email)
         return false;
     }
 }
-[HttpGet("ConfirmAccount")]
-public IActionResult ConfirmAccount(string emails, string enteredOTP, [FromServices] IMemoryCache memoryCache)
+
+public class requestUpdate {
+    public string username {get;set;}
+    public string newpassword {get;set;}
+}
+
+[HttpPost("ChangePassWord")]
+public IActionResult ChangePassword([FromBody] requestUpdate requests) {
+    var successApiResponse = new ApiResponse();
+    try{
+           // Assuming iduser is a long, convert it to string if needed
+           
+            var dataup = _context.Accounts.Find(requests.username);
+         
+            if (dataup != null){
+                   dataup.Password = requests.newpassword;
+            _context.Accounts.Update(dataup);
+            _context.SaveChanges();
+            }
+
+            successApiResponse.Status = 200; // Internal Server Error
+            successApiResponse.Message = "Cập nhật tài khoản thành công";
+            successApiResponse.Data = dataup.Username;
+    }catch {
+            successApiResponse.Status = 500; // Internal Server Error
+            successApiResponse.Message = "Cập nhật tài khoản thất bại";
+            successApiResponse.Data = "error";
+    }
+   
+     return Ok(successApiResponse);
+
+}
+
+[HttpGet("ConfirmAccountForgotPassword")]
+public IActionResult ConfirmAccountForgotPassword([FromServices] IMemoryCache memoryCache,string emails,string enteredOTP,long iduser)
 {
      var successApiResponse = new ApiResponse();
     // Kiểm tra xem email có tồn tại trong bộ nhớ đệm không
@@ -433,12 +525,75 @@ public IActionResult ConfirmAccount(string emails, string enteredOTP, [FromServi
         // So sánh mã OTP nhập vào với mã OTP trong bộ nhớ đệm
         if (enteredOTP == storedOTP)
         {
+            var datagetaccount = _context.Accounts.Where(x=>x.Idusers == iduser).SingleOrDefault();
+            // Mã OTP hợp lệ, thực hiện các hành động cần thiết
+             var user = new iduser();
+             user.id = datagetaccount.Idusers;
+             user.username = datagetaccount.Username;
+            successApiResponse.Status = 200; // Internal Server Error
+            successApiResponse.Message = "OTP hợp lệ";
+            successApiResponse.Data = user;
+                       
+                         
+                        
+        
+        }
+        else
+        {
+             successApiResponse.Status = 500; // Internal Server Error
+            successApiResponse.Message = "error";
+            successApiResponse.Data = "OTP không hợp lệ";
+        }
+    }
+    else
+    {
+        successApiResponse.Status = 500; // Internal Server Error
+            successApiResponse.Message = "error";
+            successApiResponse.Data = "otp hết thời gian chấp nhận";
+    }
+    return Ok(successApiResponse);
+}
+
+[HttpPost("ConfirmAccount")]
+public IActionResult ConfirmAccount([FromServices] IMemoryCache memoryCache,[FromBody] userAdd user)
+{
+     var successApiResponse = new ApiResponse();
+    // Kiểm tra xem email có tồn tại trong bộ nhớ đệm không
+    if (memoryCache.TryGetValue(user.emails, out string storedOTP))
+    {
+        // So sánh mã OTP nhập vào với mã OTP trong bộ nhớ đệm
+        if (user.enteredOTP == storedOTP)
+        {
             // Mã OTP hợp lệ, thực hiện các hành động cần thiết
          
+ 
+                       
+                            var users = new User();
+                            users.Fullname = user.fullname;
+                            users.Email = user.emails;
+                            users.Idrole = 1;
+                            _context.Users.Add(users);
+                            _context.SaveChanges();
 
-            successApiResponse.Status = 200; // Internal Server Error
-            successApiResponse.Message = "Ok";
-            successApiResponse.Data = "OTP hợp lệ tạo tài khoản thành công";
+                            if (users.Idusers != 0) {
+                                    var account  = new Account();
+                                     account.Idusers = users.Idusers;
+                                    account.Username = user.username;
+                                    account.Password = user.passwords;
+                                    account.points = 0;
+                                    _context.Accounts.Add(account);
+                                    _context.SaveChanges();
+                                    successApiResponse.Status = 200; // Internal Server Error
+                                    successApiResponse.Message = "OTP hợp lệ tạo tài khoản thành công";
+                                    successApiResponse.Data = account.Username;
+
+                                    }else {
+                                    successApiResponse.Status = 500; // Internal Server Error
+                                    successApiResponse.Message = "Tạo tài khoản thất bại";
+                                    successApiResponse.Data = "Tạo tài khoản thất bại";
+                            }
+                        
+        
         }
         else
         {

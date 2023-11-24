@@ -15,6 +15,7 @@ using System.Text;
 using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
 using RestSharp;
+using Microsoft.Extensions.Caching.Memory;
 // using MySql.Data.EntityFrameworkCore;
 
 namespace webapiserver.Controllers;
@@ -26,14 +27,27 @@ public class PaymentMomoController : ControllerBase
         private readonly CinemaContext _context;
         private readonly VnpayConfig vnpayConfig;
        
-      
-        public PaymentMomoController(CinemaContext context,IOptions<VnpayConfig> VnpayConfigs)
+      private readonly IMemoryCache _memoryCache;
+        public PaymentMomoController(CinemaContext context,IOptions<VnpayConfig> VnpayConfigs,IMemoryCache memoryCache)
         {
             _context = context;
-          
+            _memoryCache = memoryCache;
             this.vnpayConfig  = VnpayConfigs.Value;
          
         }
+// lưu cache
+ public void SetCacheValue<T>(string key, T value, TimeSpan expirationTime)
+    {
+        _memoryCache.Set(key, value, expirationTime);
+    }
+
+    public T GetCacheValue<T>(string key)
+    {
+        return _memoryCache.Get<T>(key);
+    }
+
+
+//end luu cache
              
 
       
@@ -64,12 +78,58 @@ public class paymentrequest {
     string vnp_PayDate,
     string vnp_ResponseCode ,string vnp_TmnCode,string vnp_TransactionNo,string vnp_TransactionStatus,string vnp_TxnRef,string vnp_SecureHash)
     {
-      
-
+  
          var successApiResponse = new ApiResponse();
-
+         long idorderfinal = 0;
         if (vnp_TransactionStatus == "00") {
-        var datapaymentvnpays = new paymentVNPAY();
+           var cachedData = GetCacheValue<BillsVNPAY>("myCacheKey");
+if (cachedData != null){
+                 BillsVNPAY bl = new BillsVNPAY();
+                  
+                   
+                       Bill billspay = new Bill {
+                         Idcinema = cachedData.Idcinema,
+                         Idinterest = cachedData.Idinterest,
+                         Iduser = cachedData.Iduser,
+                         Idmovie = cachedData.Idmovie,
+                         Vat = cachedData.Vat,
+                         Quantityticket = cachedData.Quantityticket,
+                         Totalamount = cachedData.Totalamount,
+                         Datebill = DateTime.Now,
+                         Note = cachedData.Note,
+                         Statusbill = cachedData.Statusbill,
+                          Idvoucher = 10
+                       };
+                       _context.Bills.Add(billspay);
+                       _context.SaveChanges();
+                       bl.Idbill = billspay.Idbill;
+                       bl.Totalamount = billspay.Totalamount;
+                       if (billspay.Idbill != 0) {
+                            foreach (var item in cachedData.ticket) {
+                                Ticket TC = new Ticket {
+                                Idbill =  billspay.Idbill,
+                                Idchair = item.Idchair,
+                                Idinterest = cachedData.Idinterest,
+                                Pricechair = item.Pricechair
+                                };
+                                _context.Tickets.Add(TC);
+                                _context.SaveChanges();
+                            }
+                       }
+                      if (cachedData.combobill.Count != 0){
+                         foreach(var item in cachedData.combobill) {
+                              FoodComboWithBills foodcombowithbill = new FoodComboWithBills {
+                                idcombo = item.idcombo,
+                                Idbill = billspay.Idbill,
+                              };
+                              _context.FoodComboWithBills.Add(foodcombowithbill);
+                              _context.SaveChanges();
+                         };
+                      };
+      //tao giao dich vnpay
+       var datapaymentvnpays = new paymentVNPAY();
+      if (bl.Idbill != 0){
+              
         datapaymentvnpays.vnp_Amount = vnp_Amount;
         datapaymentvnpays.vnp_BackTranNo = vnp_BankTranNo;
         datapaymentvnpays.vnp_BankCode = vnp_BankCode;
@@ -83,14 +143,29 @@ public class paymentrequest {
         datapaymentvnpays.vnp_TransactionSatus = vnp_TransactionStatus;
         datapaymentvnpays.vnp_TxnRef = vnp_TxnRef;
         datapaymentvnpays.vnp_SecureHash = vnp_SecureHash;
-        datapaymentvnpays.Idbills = Convert.ToInt32(vnp_TxnRef);
+        datapaymentvnpays.Idbills = bl.Idbill;
        var datapaymentvnpay = _context.paymentVNPAY.Add(datapaymentvnpays);
        _context.SaveChanges();
+      }
+      //xu ly luu cache
+         const string cacheKey = "intValue";  
+      if (!_memoryCache.TryGetValue(cacheKey, out int cachedValue))
+        {
+    
+       _memoryCache.Set(cacheKey, bl.Idbill, TimeSpan.FromMinutes(30));
+         }
+      //end
+      idorderfinal = bl.Idbill;
        
         successApiResponse.Status = 200;
         successApiResponse.Message = "OK";
 
         successApiResponse.Data = datapaymentvnpays;
+                    
+}
+
+
+       
         } else {
                successApiResponse.Status = 500;
         successApiResponse.Message = "error";
@@ -99,8 +174,13 @@ public class paymentrequest {
         }
          
        
-
-        return Ok(successApiResponse);
+    var html = System.IO.File.ReadAllText(@"./Controllers/PaymentMomo/successPayment.aspx");
+    html = html.Replace("{{name}}", idorderfinal.ToString());
+    return base.Content(html, "text/html");
+    //        var html = System.IO.File.ReadAllText(@"./Controllers/PaymentMomo/successPayment.aspx");
+    // return base.Content(html, "text/html");
+    
+        // return Ok(successApiResponse);
     }
 
    
@@ -117,13 +197,103 @@ public class responsePayment {
 
  [HttpGet("getidbillPaymentVnpay")]
     public IActionResult getidbillPaymentVnpay(int idbill){
-        var dataidbill = _context.paymentVNPAY.Where(x=>x.Idbills == idbill).SingleOrDefault();
-            var successApiResponse = new ApiResponse();
-            successApiResponse.Status = 200;
-            successApiResponse.Message = "OK";
+        //   var cachedData = GetCacheValue<BillsVNPAY>("myCacheKey");
+          const string cacheKey = "intValue";
+         var successApiResponse = new ApiResponse();
+    if (_memoryCache.TryGetValue("intValue", out long cachedValue)){
+          var dataidbill = _context.paymentVNPAY.Where(x=>x.Idbills == cachedValue).SingleOrDefault();
+          
+              if (dataidbill != null) {
+                  successApiResponse.Status = 200;
+                  successApiResponse.Message = "Thanh toán thành công vui lòng kiểm tra tin nhấn trong app";
+                  successApiResponse.Data = dataidbill;
+            }else {
+                    successApiResponse.Status = 500;
+            successApiResponse.Message = "Thanh toán thất bại vui lòng kiểm tra lại";
             successApiResponse.Data = dataidbill;
+            }
+    }
+         
+
+          
+        
         return Ok(successApiResponse);
     }
+
+
+ [HttpPost("SaveCachePaymentBill")] 
+ public IActionResult SaveCachePaymentBill([FromBody] BillsVNPAY billpayment) {
+    var successApiResponse = new ApiResponse();
+    if (billpayment != null){
+       SetCacheValue("myCacheKey", billpayment, TimeSpan.FromMinutes(90)); 
+        successApiResponse.Status = 200;
+        successApiResponse.Message = "OK";
+        successApiResponse.Data = billpayment;
+    }else {
+        successApiResponse.Status = 500;
+        successApiResponse.Message = "Lưu hoá đơn không thành công";
+        successApiResponse.Data = "null";
+    }
+
+   
+     return Ok(successApiResponse);
+ }
+
+ //MODEL BILL
+public class BillsVNPAY {
+
+    
+     public long Idbill { get; set; }
+
+    public long? Idmovie { get; set; }
+
+    public int? Idvoucher { get; set; }
+
+    public long? Iduser { get; set; }
+
+    public int? Idinterest { get; set; }
+
+    public long? Idcinema { get; set; }
+
+    public int? Quantityticket { get; set; }
+
+    public int? Vat { get; set; }
+
+    public int? Totalamount { get; set; }
+
+    public DateTime? Datebill { get; set; }
+
+    public string? Note { get; set; }
+
+    public int? Statusbill { get; set; }
+
+    public List<ticketess> ticket {get;set;}
+
+    public List<combobillss> combobill {get;set;} 
+}
+
+public class ticketess {
+    public long Idticket { get; set; }
+
+    public int? Idchair { get; set; }
+
+    public int? Idinterest { get; set; }
+
+    public int? Pricechair { get; set; }
+
+    public long? Idbill { get; set; }
+}
+
+public class combobillss {
+  public int IdBillfoodCombo {get;set;}
+
+      public int idcombo {get;set;}
+
+      public long? Idbill {get;set;}
+}
+
+
+ // END MODEL BILL
 
     // API GET LIST VOUCHER
 [HttpPost("CreateLinkVNPAY")]
@@ -161,7 +331,7 @@ public IActionResult CreateLinkVNPAY([FromBody] responsePayment responsePayments
                        vnpayConfig.TmnCode,DateTime.Now, 
                        MomoHelper.GetIpAddress(),responsePayments.amount,
                       "VND","other",
-                     note,vnpayConfig.ReturnUrl,responsePayments.idorder.ToString());
+                     note,vnpayConfig.ReturnUrl,orderid.ToString());
                       var paymentUrlvn = string.Empty;
                       paymentUrlvn = vnpayRequest.GetLink(vnpayConfig.PaymentUrl,vnpayConfig.HashSecret);
                       reponsepaymentvnpay.amount = responsePayments.amount;
