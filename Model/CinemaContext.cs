@@ -38,6 +38,8 @@ public partial class CinemaContext : DbContext
     public DbSet<ListFoodCombo> ListFoodCombo {get;set;}
 
     public DbSet<MoviesBooking> moviesBookings {get;set;}
+
+    public DbSet<Notifaction> Notifaction {get;set;}
     //INNERHOIN END
     public virtual DbSet<Account> Accounts { get; set; }
 
@@ -545,6 +547,8 @@ public partial class CinemaContext : DbContext
             .HasKey(fc => fc.id); 
                modelBuilder.Entity<ListFoodCombo>()
             .HasKey(fc => fc.id);
+                 modelBuilder.Entity<Notifaction>()
+            .HasKey(fc => fc.idnotifaction);
             modelBuilder.Entity<paymentVNPAY>().HasKey(fc => fc.idpaymentvnpay);
         //INNER JOIN END
     }

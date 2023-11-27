@@ -223,7 +223,7 @@ public IActionResult getDetailMovies(long Idmovie)
                  var datacategoryMovie = _context.CategoryMovies.Where(x=>x.Idcategorymovie == result.Idcategorymovie).SingleOrDefault();
                  var dataNation = _context.Nations.Where(x=>x.Idnation == result.Idnation).SingleOrDefault();
                 var getvideofile = _context.Videousers.Where(x => x.Idvideo == result.Idvideo).FirstOrDefault();
-                var moviedetail = new MovieItem();
+                var moviedetail = new MovieItemDetail();
                 moviedetail.MovieID = result.Idmovie;
                 moviedetail.Namemovie = result.Namemovie;
                 moviedetail.Author = result.Author;
@@ -236,7 +236,7 @@ public IActionResult getDetailMovies(long Idmovie)
                moviedetail.namecategorymovie = datacategoryMovie.Namecategorymovie;
                moviedetail.namenation = dataNation.Namenation;
                 moviedetail.Videofile = getvideofile.Videofile;
-        
+              moviedetail.type = getvideofile.Types;
                 successApiResponse.Status = 200;
                 successApiResponse.Message = "OK";
                 successApiResponse.Data = moviedetail;
@@ -266,7 +266,12 @@ public class NewMovie {
 
     public string? Poster { get; set; }
 
-   
+   //video
+    public string? Videofile { get; set; }
+
+    public long? Iduser { get; set; }
+
+    public int? Types { get; set; }
 
   
 }
@@ -299,6 +304,18 @@ public IActionResult CreateMovieNew([FromBody] NewMovie newmovie)
                   
                try
                  {
+                    //tao video moi
+                    Videouser videousers = new Videouser();
+                    videousers.Videofile = newmovie.Videofile;
+                    videousers.Dateup = DateTime.Now;
+                    videousers.Titlevideo = newmovie.Namemovie;
+                    videousers.Describes = "none";
+                    videousers.Iduser = newmovie.Iduser;
+                    videousers.Imageview = "none";
+                    videousers.Types = newmovie.Types;
+                    _context.Videousers.Add(videousers);
+                    _context.SaveChanges();
+                    //
                     Movie movienew = new Movie();
                     movienew.Author = newmovie.Author;
                     movienew.Namemovie = newmovie.Namemovie;
@@ -306,7 +323,7 @@ public IActionResult CreateMovieNew([FromBody] NewMovie newmovie)
                     movienew.Poster = newmovie.Poster;
                     movienew.Idcategorymovie = newmovie.Idcategorymovie;
                     movienew.Idnation = newmovie.Idnation;
-                    movienew.Idvideo = 1;
+                    movienew.Idvideo = videousers.Idvideo;
                     movienew.Statusshow = 0;
                     // movienew.Idvideo = 0;
                     movienew.Timeall = newmovie.Timeall;
@@ -421,6 +438,21 @@ public IActionResult UpdateMovies([FromBody] NewMovie newmovie)
                   
                try
                  {
+                       long bl = 0 ;
+                    //luu videouser
+                    if (newmovie.Videofile != null){
+                     Videouser user = new Videouser();
+                        user.Videofile = newmovie.Videofile;
+                        user.Dateup = DateTime.Now;
+                        user.Describes = newmovie.Describes;
+                        user.Iduser = newmovie.Iduser;
+                        user.Titlevideo = newmovie.Namemovie;
+                        user.Types = newmovie.Types;
+                        _context.Videousers.Add(user);
+                        _context.SaveChanges();
+                        bl = user.Idvideo;
+                    }
+                
                    var dataUpdate = _context.Movies.Find(newmovie.Idmovie);
                     dataUpdate.Idnation = newmovie.Idnation;
                     dataUpdate.Idcategorymovie = newmovie.Idcategorymovie;
@@ -430,9 +462,16 @@ public IActionResult UpdateMovies([FromBody] NewMovie newmovie)
                     dataUpdate.Poster = newmovie.Poster;
                     dataUpdate.Yearbirthday = newmovie.Yearbirthday;
                     dataUpdate.Timeall = newmovie.Timeall;
+                    if (bl != 0){
+                       dataUpdate.Idvideo = bl;
+                    }
+                   
                     _context.Movies.Update(dataUpdate);
                    
                    _context.SaveChanges();
+
+                  
+
                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = dataUpdate;
@@ -584,7 +623,10 @@ public IActionResult getListMovieWithBooking(int statusshow)
 //     public string getImage(){
 //         return GetImagebyProduct("age.png");
 //     }
+public class MovieItemDetail: MovieItem {
+    public int? type {get;set;}
 
+}
      
 public class MovieItem
 {

@@ -54,7 +54,7 @@ public IActionResult getListvideoUserTrailler(int TYPE)
                try
                  {
                       string sql = "call cinema.getListVideoUser(@p0)";
-                   var dataget = _context.Videousers.FromSqlRaw(sql,TYPE).AsEnumerable().ToList();
+                   var dataget = _context.Videousers.ToList();
                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = dataget;

@@ -98,7 +98,7 @@ if (cachedData != null){
                          Datebill = DateTime.Now,
                          Note = cachedData.Note,
                          Statusbill = cachedData.Statusbill,
-                          Idvoucher = 10
+                          Idvoucher = cachedData.Idvoucher <= 0 ? 10:cachedData.Idvoucher
                        };
                        _context.Bills.Add(billspay);
                        _context.SaveChanges();
@@ -155,6 +155,16 @@ if (cachedData != null){
        _memoryCache.Set(cacheKey, bl.Idbill, TimeSpan.FromMinutes(30));
          }
       //end
+      // tao thong bao
+        if (billspay.Idbill != null){
+            var datanotifaction = new Notifaction();
+            datanotifaction.messages = "Bạn có mã hoá đơn mua vé mới với mã là: " + billspay.Idbill;
+            datanotifaction.iduser = billspay.Iduser;
+            datanotifaction.datecreate = DateTime.Now;
+            _context.Notifaction.Add(datanotifaction);
+            _context.SaveChanges();
+        }
+      //
       idorderfinal = bl.Idbill;
        
         successApiResponse.Status = 200;
@@ -212,6 +222,10 @@ public class responsePayment {
             successApiResponse.Message = "Thanh toán thất bại vui lòng kiểm tra lại";
             successApiResponse.Data = dataidbill;
             }
+    }else {
+         successApiResponse.Status = 500;
+            successApiResponse.Message = "Thanh toán thất bại vui lòng kiểm tra lại";
+            successApiResponse.Data = "null";
     }
          
 

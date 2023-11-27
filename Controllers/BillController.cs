@@ -27,7 +27,7 @@ public class BillController : ControllerBase
 
 
 
-// API GET LIST CHAIR in room
+// API GET LIST CHAIR in room - thanh toan tai quay
 [HttpPost("PaymentBill")]
 public IActionResult PaymentBill([FromBody] Bills bills)
 {
@@ -70,7 +70,8 @@ public IActionResult PaymentBill([FromBody] Bills bills)
                          Datebill = DateTime.Now,
                          Note = bills.Note,
                          Statusbill = bills.Statusbill,
-                          Idvoucher = 10
+
+                          Idvoucher = bills.Idvoucher <= 0 ? 10:bills.Idvoucher
                        };
                        _context.Bills.Add(billspay);
                        _context.SaveChanges();
@@ -98,14 +99,35 @@ public IActionResult PaymentBill([FromBody] Bills bills)
                               _context.SaveChanges();
                          };
                       };
-
-                    }   else {
-                      return BadRequest("So tien trong tai khoan cua ban khong du xin vui long kiem tra lai");
-                    }  
-                
-                      successApiResponse.Status = 200;
+                      //cap nhât lai diem so tai khoan
+                        var datapoint = _context.Accounts.Find(dataAccount.Username);
+                        int datapointinAcc= Convert.ToInt32(dataAccount.points);
+                        int dataTotalacc = Convert.ToInt32(billspay.Totalamount);
+                     datapoint.points = datapointinAcc - dataTotalacc;
+                     _context.Accounts.Update(datapoint);
+                     _context.SaveChanges();
+                      // thong bao
+                    if (billspay.Idbill != 0){
+                     var datanotifaction = new Notifaction();
+                     datanotifaction.messages = "Bạn có đơn hàng mới với mã hoá đơn của bạn là: " + billspay.Idbill;
+                     datanotifaction.iduser = billspay.Iduser;
+                     datanotifaction.datecreate = DateTime.Now;
+                     _context.Notifaction.Add(datanotifaction);
+                     _context.SaveChanges();
+                    }
+                     //////
+                     ///
+                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = bl;
+                    }   else {
+                       successApiResponse.Status = 500;
+                     successApiResponse.Message = "So tien trong tai khoan cua ban khong du xin vui long kiem tra lai";
+                     successApiResponse.Data = "null";
+                     
+                    }  
+                
+                    
                  }
                  catch (IndexOutOfRangeException ex)
                   {
@@ -124,7 +146,7 @@ public IActionResult PaymentBill([FromBody] Bills bills)
 
 // API BILL PAYMENT FOODCOMBO
 [HttpPost("postPaymentFoodComboBill")]
-public IActionResult postPaymentFoodComboBill(paymentBill foodcombobill)
+public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -161,6 +183,7 @@ public IActionResult postPaymentFoodComboBill(paymentBill foodcombobill)
                   foodcombo.iduser = foodcombobill.iduser;
                   foodcombo.idcinemas = foodcombobill.idcinemas;
                   foodcombo.statusbillfoodcombo = 0;
+                  foodcombo.idvoucher = foodcombobill.idvoucher;
                      _context.FoodCombillPayment.Add(foodcombo);
                      _context.SaveChanges();
                      if (foodcombo.id != null) {
@@ -173,6 +196,14 @@ public IActionResult postPaymentFoodComboBill(paymentBill foodcombobill)
                         _context.SaveChanges();       
                         }
                      } 
+                     if (foodcombo.id != null){
+                        var datanotifaction = new Notifaction();
+                        datanotifaction.messages = "Bạn có hoá đơn đặt món ăn mới vui lòng kiểm tra thông tin với mã hoá đơn là: " + foodcombo.id;
+                        datanotifaction.iduser = foodcombo.iduser;
+                        datanotifaction.datecreate = DateTime.Now;
+                        _context.Notifaction.Add(datanotifaction);
+                        _context.SaveChanges();
+                     }
                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = foodcombo;
@@ -194,7 +225,7 @@ public IActionResult postPaymentFoodComboBill(paymentBill foodcombobill)
 
 
 [HttpGet("getListBillinAccount")]
-public IActionResult getListBillinAccount(long? iduser)
+public IActionResult getListBillinAccount(long? iduser,int status)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -224,7 +255,7 @@ public IActionResult getListBillinAccount(long? iduser)
                         List<InfoBill> billarray = new List<InfoBill>();
 
                         var dataBill = _context.Bills
-                            .Where(x => x.Iduser == iduser)
+                            .Where(x => x.Iduser == iduser && x.Statusbill == status)
                             .ToList();
 
                         foreach (var item in dataBill)
@@ -261,7 +292,7 @@ public IActionResult getListBillinAccount(long? iduser)
                         infoBills.poster = dataMovie.Poster;
                         infoBills.starttime = datainterest.Times;
                         infoBills.endtime = datainterest.TimeEnd;
-
+                        infoBills.idbill = item.Idbill;
                         billarray.Add(infoBills);
                         }
                         }
@@ -448,7 +479,7 @@ public IActionResult getListAllBillFoodCombo(int idcinema,int status,DateTime da
 }
 
 [HttpGet("getListBillFoodinAccount")]
-public IActionResult getListBillFoodinAccount(long? iduser)
+public IActionResult getListBillFoodinAccount(long? iduser,int statusfoodbill)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -475,11 +506,12 @@ public IActionResult getListBillFoodinAccount(long? iduser)
                   
                try
                  {   
-                      InfoBillFoodCombo infobillfoodcombo = new InfoBillFoodCombo();
+                     
                       List<InfoBillFoodCombo> combobill = new List<InfoBillFoodCombo>();
-                      var dataBillFoodcombo = _context.FoodCombillPayment.Where(x => x.iduser == iduser).ToList();
+                      var dataBillFoodcombo = _context.FoodCombillPayment.Where(x => x.iduser == iduser && x.statusbillfoodcombo == statusfoodbill).ToList();
 
                       foreach (var item in dataBillFoodcombo) {
+                     InfoBillFoodCombo infobillfoodcombo = new InfoBillFoodCombo();
                       infobillfoodcombo.total_prices = item.total_price;
                       infobillfoodcombo.quantity = item.numbers;
                       infobillfoodcombo.time = item.datetimes;
@@ -490,8 +522,9 @@ public IActionResult getListBillFoodinAccount(long? iduser)
                          var datagetFoodcomboonly = _context.Foodcombo.Where(x => x.idcombo == item2.Idfoodcombo).SingleOrDefault();
                          infobillfoodcombo.listfoodcombo.Add(datagetFoodcomboonly);
                         }
+                          combobill.Add(infobillfoodcombo);
                       }
-                       combobill.Add(infobillfoodcombo);
+                     
 
                         successApiResponse.Status = 200;
                         successApiResponse.Message = "OK";
@@ -707,6 +740,29 @@ public class InfoBill {
 
 }
 
+
+public class paymentBillFoodCombo {
+   public int id { get; set; }
+    public int  IdFoodcombo { get; set; }
+ 
+    public int idFoodlistcombo { get; set; }
+    
+    public int numbers {get;set;}
+
+    public DateTime datetimes {get;set;}
+
+    public int total_price {get;set;}
+
+    public long? iduser {get;set;}
+
+    public long? idcinemas {get;set;}
+    public int status {get;set;}
+  public List<ListFoodCombo> foodComboBills {get;set;}
+
+  public int idvoucher {get;set;}
+  
+}
+
 public class paymentBill {
    public int id { get; set; }
     public int  IdFoodcombo { get; set; }
@@ -724,6 +780,7 @@ public class paymentBill {
     public long? idcinemas {get;set;}
     public int status {get;set;}
   public List<ListFoodCombo> foodComboBills {get;set;}
+  
 }
 
 public class Bills {
