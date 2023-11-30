@@ -79,10 +79,12 @@ public IActionResult getdata(string username, string password)
             else
             {
 
-                  var userDto = new UserDto();
+                  var userDto = new UserDtoResponse();
 
         // Set properties based on the retrieved user entity
                   userDto.Idusers = result.Idusers;
+                  var datausername = _context.Accounts.Where(x=>x.Idusers == result.Idusers).SingleOrDefault();
+                  userDto.username = datausername.Username;
                   userDto.Fullname = result.Fullname;
                   userDto.Email = result.Email;
                   userDto.Phone = result.Phone;
@@ -642,7 +644,11 @@ public class UserDto
     public string Avatar { get; set; }
     public int? gender {get;set;}
     public string? address {get;set;}
-    public string? idrolename {get;set;}
+    public string? idrolename {get;set;} 
+}
+
+public class UserDtoResponse: UserDto {
+    public string username {get;set;}
 }
 
 

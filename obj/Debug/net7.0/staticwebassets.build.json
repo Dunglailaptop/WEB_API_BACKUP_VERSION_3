@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d7wr1JGKgD4XVZfbh5/ohh5gQMVh+VpJoBpPeoxCNmI=",
+  "Hash": "ty3m8QwaZ7g8sURyNi6VudSaeUFKC+mZ/OSrE8eq6RY=",
   "Source": "MyCinema",
   "BasePath": "_content/MyCinema",
   "Mode": "Default",
@@ -219,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/Uploads/Movie/09F42B52-85B7-4619-BC80-5AEEC1BDD661.webp/09F42B52-85B7-4619-BC80-5AEEC1BDD661.webp"
+    },
+    {
+      "Identity": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/wwwroot/Uploads/Movie/0DBD9734-6787-4950-8348-348312550ADC.webp/0DBD9734-6787-4950-8348-348312550ADC.webp",
+      "SourceId": "MyCinema",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/wwwroot/",
+      "BasePath": "_content/MyCinema",
+      "RelativePath": "Uploads/Movie/0DBD9734-6787-4950-8348-348312550ADC.webp/0DBD9734-6787-4950-8348-348312550ADC.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Uploads/Movie/0DBD9734-6787-4950-8348-348312550ADC.webp/0DBD9734-6787-4950-8348-348312550ADC.webp"
     },
     {
       "Identity": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/wwwroot/Uploads/Movie/0DD4DF82-1D3E-4FD3-987F-23FEFF6B30FA.jpeg/0DD4DF82-1D3E-4FD3-987F-23FEFF6B30FA.jpeg",
@@ -1443,6 +1460,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/Uploads/Movie/F87061BC-897D-4CC9-A34E-B6AD23AD6A2B.jpeg/F87061BC-897D-4CC9-A34E-B6AD23AD6A2B.jpeg"
+    },
+    {
+      "Identity": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/wwwroot/Uploads/Movie/FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg/FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg",
+      "SourceId": "MyCinema",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/wwwroot/",
+      "BasePath": "_content/MyCinema",
+      "RelativePath": "Uploads/Movie/FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg/FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Uploads/Movie/FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg/FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg"
     },
     {
       "Identity": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/wwwroot/Uploads/Movie/FF4B74AD-177E-493A-8678-19AF9D9A721E.webp/FF4B74AD-177E-493A-8678-19AF9D9A721E.webp",

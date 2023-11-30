@@ -176,4 +176,76 @@ public IActionResult getInfoUserCinema(int iduser)
  return Ok(successApiResponse);
 }
 
+public class cinemareponse {
+     public long Idcinema { get; set; }
+
+    public string? Namecinema { get; set; }
+
+    public string? Address { get; set; }
+
+    public string? Phone { get; set; }
+
+    public string? Picture { get; set; }
+
+    public string? Describes { get; set; }
+}
+
+
+// API GET LIST CINEMA
+[HttpPost("updateInfoCinema")]
+public IActionResult updateInfoCinema(cinemareponse cinemas)
+{
+    // khoi tao api response
+    var successApiResponse = new ApiResponse();
+    //header
+       string token = Request.Headers["token"];
+       string filterHeaderValue2 = Request.Headers["ProjectId"];
+       string filterHeaderValue3 = Request.Headers["Method"];
+       string expectedToken = ValidHeader.Token;
+       string method =Convert.ToString(ValidHeader.MethodPost);
+       string Pojectid = Convert.ToString(ValidHeader.Project_id);
+    //check header
+        if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(filterHeaderValue2) || string.IsNullOrEmpty(filterHeaderValue3))
+        {
+        // The "Authorize" header was not found in the request
+           return BadRequest("Authorize header not found in the request.");
+        }else {
+
+            if (token != expectedToken || filterHeaderValue2 != Pojectid || filterHeaderValue3 != method)
+          {
+            return Unauthorized("Invalid token."); // Return an error response if the tokens don't match
+          }else{
+            // if (date != null && Idmovie != null){
+                
+                  
+               try
+                 {
+                  var dataupdatecinemas = _context.Cinemas.Find(cinemas.Idcinema);
+                  dataupdatecinemas.Namecinema = cinemas.Namecinema;
+                  dataupdatecinemas.Picture = cinemas.Picture;
+                  dataupdatecinemas.Describes = cinemas.Describes;
+                  dataupdatecinemas.Address = cinemas.Address;
+                  dataupdatecinemas.Phone = cinemas.Phone;
+                  _context.Cinemas.Update(dataupdatecinemas);
+                  _context.SaveChanges();
+                
+                      successApiResponse.Status = 200;
+                     successApiResponse.Message = "OK";
+                     successApiResponse.Data = dataupdatecinemas;
+                 }
+                 catch (IndexOutOfRangeException ex)
+                  {
+    
+                  }     
+            // }else {
+            //     return BadRequest("khong tim thay thong tin");
+            // }
+                 
+
+           }
+
+        }
+ return Ok(successApiResponse);
+}
+
 }
