@@ -145,7 +145,7 @@
             <div class="main-contents">
               <div class="success-icon">&#10004;</div>
               <div class="success-title">
-                THANH TOÁN THÀNH CÔNG
+                PAYMENT SUCCESSFULL
               </div>
               <div class="order-details">
                 <div style="font-size: 120px;" class="order-number-label">Order Number:</div>

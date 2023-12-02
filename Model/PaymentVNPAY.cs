@@ -23,5 +23,7 @@ public string vnp_TransactionSatus {get;set;}
 public string vnp_TxnRef {get;set;}
 public string vnp_SecureHash {get;set;} 
 
+public int Idbill {get;set;} 
+
 public long Idbills {get;set;}
 }

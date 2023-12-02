@@ -11,6 +11,10 @@ using Microsoft.AspNetCore.Authorization;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 // using MySql.Data.EntityFrameworkCore;
+using System.Net.Mail;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+
 
 namespace webapiserver.Controllers;
 
@@ -116,6 +120,17 @@ public IActionResult PaymentBill([FromBody] Bills bills)
                      _context.SaveChanges();
                     }
                      //////
+                     List<Chair> chairs = new List<Chair>();
+                     List<FoodCombo> foodcombo = new List<FoodCombo>();
+                     foreach (var ticket in bills.ticket) {
+                            var datachair = _context.Chairs.Where(x=>x.Idchair == ticket.Idchair).SingleOrDefault();
+                             chairs.Add(datachair);
+                     }
+                     foreach (var foodcombos in bills.combobill){
+                        var datacombo = _context.Foodcombo.Where(x=>x.idcombo == foodcombos.idcombo).SingleOrDefault();
+                        foodcombo.Add(datacombo);
+                     }
+                     HashHelper.sendemailTicket("ndung983@gmail.com",chairs,billspay,foodcombo);
                      ///
                        successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
@@ -190,6 +205,7 @@ public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill
                        foreach (var item in  foodcombobill.foodComboBills)
                         {
                         ListFoodCombo list = new ListFoodCombo();
+                        list.idbillfood = foodcombo.id;
                         list.idfoodcombobill = foodcombo.id;
                         list.Idfoodcombo = item.Idfoodcombo;
                         _context.ListFoodCombo.Add(list);
@@ -204,6 +220,15 @@ public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill
                         _context.Notifaction.Add(datanotifaction);
                         _context.SaveChanges();
                      }
+                     //send email
+                      var emailuser = _context.Users.Where(x=>x.Idusers == foodcombo.iduser).SingleOrDefault();
+                      var datalistfoodcombo = _context.ListFoodCombo.Where(x=>x.idfoodcombobill == foodcombo.id).ToList();
+                      List<FoodCombo> foodcombolist = new List<FoodCombo>();
+                      foreach (ListFoodCombo list in datalistfoodcombo) {
+                        var datafoodcombo = _context.Foodcombo.Where(x=>x.idcombo == list.Idfoodcombo).SingleOrDefault();
+                         foodcombolist.Add(datafoodcombo);
+                      }
+                   var checkbool = HashHelper.sendemail("ndung983@gmail.com",foodcombolist,foodcombo);
                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = foodcombo;
@@ -222,6 +247,55 @@ public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill
         }
  return Ok(successApiResponse);
 }
+
+// API CREATE ACCOUNT
+// Create a single instance of SmtpClient and reuse it
+// private static readonly SmtpClient _smtp = new SmtpClient("smtp.gmail.com")
+// {
+//     EnableSsl = true,
+//     Port = 587,
+//     DeliveryMethod = SmtpDeliveryMethod.Network,
+//     Credentials = new NetworkCredential("0850080012@sv.hcmunre.edu.vn", "2792001dung")
+// };
+
+// [HttpGet("sendemailBill")]
+// public IActionResult sendemailBill(string emails) {
+//                // Validate email address
+//                 if (!HashHelper.IsValidEmail(emails))
+//                 {
+//                     return BadRequest("emails không hợp lệ");
+//                 }
+//             try {
+//  // string otp = GenerateOTP();
+//                 MailMessage message = new MailMessage();
+//                 var to = emails;
+//                 var from = "0850080012@sv.hcmunre.edu.vn";
+//                 var pass = "2792001dung";
+//                 var messageBody = "Your OTP for creating a new account: " ;
+
+//                 // Set up the email message
+//                 message.To.Add(to);
+//                 message.From = new MailAddress(from);
+//                 message.IsBodyHtml = true;
+//                 message.Body = @"
+//                 <html>
+//                     <head>
+//                         <title>Email with HTML Content</title>
+//                     </head>
+//                     <body>
+//                         <h1>This is an HTML email</h1>
+//                         <p>This is a paragraph in the email.</p>
+//                         <!-- Add your HTML content here -->
+//                     </body>
+//                 </html>";
+//                 message.Subject = "OTP SEND EMAIL";
+//                _smtp.SendMailAsync(message);
+//                 return Ok("gửi email thành công");
+//             }catch {
+//                   return BadRequest("Gửi email thất bại");
+//             }
+               
+// }
 
 
 [HttpGet("getListBillinAccount")]
@@ -834,5 +908,7 @@ public class combobills {
 
       public long? Idbill {get;set;}
 }
+
+//send email billl
 
 }
