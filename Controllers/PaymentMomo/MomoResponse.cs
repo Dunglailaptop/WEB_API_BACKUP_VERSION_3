@@ -166,6 +166,21 @@ if (cachedData != null){
         }
       //
       idorderfinal = bl.Idbill;
+
+      //sendemail=====
+        List<Chair> chairs = new List<Chair>();
+                     List<FoodCombo> foodcombo = new List<FoodCombo>();
+                     foreach (var ticket in cachedData.ticket) {
+                            var datachair = _context.Chairs.Where(x=>x.Idchair == ticket.Idchair).SingleOrDefault();
+                             chairs.Add(datachair);
+                     }
+                     foreach (var foodcombos in cachedData.combobill){
+                        var datacombo = _context.Foodcombo.Where(x=>x.idcombo == foodcombos.idcombo).SingleOrDefault();
+                        foodcombo.Add(datacombo);
+                     }
+                     HashHelper.sendemailTicket("ndung983@gmail.com",chairs,billspay,foodcombo);
+
+      //end======
        
         successApiResponse.Status = 200;
         successApiResponse.Message = "OK";
