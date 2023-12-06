@@ -15,6 +15,7 @@ public partial class CinemaContext : DbContext
     {
     }
     //INNNER JOIN START
+    public DbSet<InterestWithRoom> InterestWithRooms {get;set;}
     public DbSet<paymentVNPAY> paymentVNPAY {get;set;}
       public DbSet<ReportFoodCombo> ReportFoodCombos {get;set;}
     public DbSet<ReportTicket> ReportTickets {get;set;}
@@ -496,6 +497,8 @@ public partial class CinemaContext : DbContext
             entity.Property(e => e.Poster).HasMaxLength(255);
         });
         //INNER JOIN START
+           modelBuilder.Entity<InterestWithRoom>()
+        .HasNoKey();
           modelBuilder.Entity<INTERESTCINEMA>()
         .HasNoKey(); // Assuming 'Id' is the primary key property name.
          modelBuilder.Entity<LISTCINEMA>()

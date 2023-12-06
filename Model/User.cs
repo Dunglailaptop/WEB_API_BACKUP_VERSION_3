@@ -20,6 +20,7 @@ public partial class User
     public string? Avatar { get; set; }
     public int? gender {get;set;}
     public string? address {get;set;}
+    public int statuss {get;set;}
 
     public virtual ICollection<Account> Accounts { get; set; } = new List<Account>();
 

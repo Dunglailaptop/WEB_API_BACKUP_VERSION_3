@@ -26,7 +26,7 @@ public class NotifactionController : ControllerBase
 
 // API GET LIST VOUCHER
 [HttpGet("getNotifactionInUser")]
-public IActionResult getNotifactionInUser(long iduser)
+public IActionResult getNotifactionInUser(long iduser,int type)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -53,11 +53,18 @@ public IActionResult getNotifactionInUser(long iduser)
                   
                try
                  {
-                    
-                   var dataget = _context.Notifaction.Where(x=>x.iduser == iduser).ToList();
+                    if (type == 1){
+                     var dataget = _context.Notifaction.Where(x=>x.iduser == iduser).ToList();
                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = dataget;
+                    }else if (type == 2) {
+                       var dataget = _context.Notifaction.ToList();
+                      successApiResponse.Status = 200;
+                     successApiResponse.Message = "OK";
+                     successApiResponse.Data = dataget;
+                    }
+             
                  }
                  catch (IndexOutOfRangeException ex)
                   {

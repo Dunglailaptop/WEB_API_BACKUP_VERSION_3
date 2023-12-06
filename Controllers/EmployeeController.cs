@@ -126,7 +126,7 @@ public IActionResult CreateNewemployee([FromBody] USERS us)
 }
 // API LOCK EMPLOYEE
 [HttpGet("Lockemployee")]
-public IActionResult Lockemployee( int idemployee, int statuss)
+public IActionResult Lockemployee( long idemployee, int statuss)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -154,7 +154,10 @@ public IActionResult Lockemployee( int idemployee, int statuss)
                try
                  {
                       string sql = "call cinema.LockEmployee(@p0,@p1)";
-                   _context.Database.ExecuteSqlRaw(sql,idemployee,statuss);
+                      _context.Database.ExecuteSqlRaw(sql,idemployee,statuss);
+                  //     var dataupdate = _context.Users.Find(idemployee);
+                  //     dataupdate.statuss = statuss;
+                  //  _context.Users.Update(dataupdate);
                    _context.SaveChanges();
                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
@@ -203,12 +206,24 @@ public IActionResult resetpasswordemployee(int idemployee)
                   
                try
                  {
-                      string sql = "call cinema.resetPasswordEmployee(@p0)";
-                   _context.Database.ExecuteSqlRaw(sql,idemployee);
-                   _context.SaveChanges();
-                      successApiResponse.Status = 200;
+                  var dataAccount = new Account();
+                  var dataacc = _context.Accounts.Where(x=>x.Idusers == idemployee).SingleOrDefault();
+                  if (dataacc != null ) {
+                     var dataupdate = _context.Accounts.Find(dataacc.Username);
+                     dataupdate.Password = "0000";
+                       _context.Accounts.Update(dataupdate);
+                         _context.SaveChanges();
+                         dataAccount = dataupdate;
+                            successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
+                     successApiResponse.Data = dataAccount;
+                  }else {
+                        successApiResponse.Status = 500;
+                     successApiResponse.Message = "không tìm thấy tài khoản của nhân viên";
                      successApiResponse.Data = "null";
+                  }
+                     
+                   
                  }
                  catch (IndexOutOfRangeException ex)
                   {

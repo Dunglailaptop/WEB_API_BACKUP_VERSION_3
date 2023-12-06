@@ -8,6 +8,15 @@ using webapiserver.Controllers;
 
 namespace MyCinema.Model;
 
+
+public partial class InterestWithRoom {
+  public long Idbill {get;set;}
+
+  public int Totalamount {get;set;}
+
+  public int Idinterest {get;set;}
+}
+
 public partial class INTERESTCINEMA
 {
     public string Namecinema { get; set; }

@@ -91,7 +91,7 @@ public IActionResult getdata(string username, string password)
                   userDto.Birthday = result.Birthday.ToString();
                   userDto.Idrole = result.Idrole;
                   userDto.Avatar = result.Avatar;
-
+                  userDto.statuss = result.statuss;
                 successApiResponse.Status = 200;
                 successApiResponse.Message = "OK";
                 successApiResponse.Data = userDto;
@@ -649,6 +649,8 @@ public class UserDto
 
 public class UserDtoResponse: UserDto {
     public string username {get;set;}
+
+    public int statuss {get;set;}
 }
 
 

@@ -729,6 +729,79 @@ public IActionResult getDetailBill(long? idbill)
  return Ok(successApiResponse);
 }
 
+//class list interest with room
+public class interestwithroom {
+   public long idbill {get;set;}
+
+   public int totalamount {get;set;}
+
+   public List<CHAIR> chairess {get;set;} = new List<CHAIR>();
+}
+// public class chaires {
+//    public string numberchair {get;set;}
+// }
+
+// API GET LIST INTEREST WITH ROOM
+[HttpGet("getlistinterestwithroom")]
+public IActionResult getlistinterestwithroom(int idroom,int idinterest)
+{
+    // khoi tao api response
+    var successApiResponse = new ApiResponse();
+    //header
+       string token = Request.Headers["token"];
+       string filterHeaderValue2 = Request.Headers["ProjectId"];
+       string filterHeaderValue3 = Request.Headers["Method"];
+       string expectedToken = ValidHeader.Token;
+       string method =Convert.ToString(ValidHeader.MethodGet);
+       string Pojectid = Convert.ToString(ValidHeader.Project_id);
+    //check header
+        if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(filterHeaderValue2) || string.IsNullOrEmpty(filterHeaderValue3))
+        {
+        // The "Authorize" header was not found in the request
+           return BadRequest("Authorize header not found in the request.");
+        }else {
+
+            if (token != expectedToken || filterHeaderValue2 != Pojectid || filterHeaderValue3 != method)
+          {
+            return Unauthorized("Invalid token."); // Return an error response if the tokens don't match
+          }else{
+            // if (date != null && Idmovie != null){
+                
+                  
+               try
+                 {
+                  List<interestwithroom> dataresponse = new List<interestwithroom>();
+                     var sql = "select bi.Idbill,bi.Totalamount,ins.Idinterest from cinema.Bill bi inner join cinema.Cinemainterest ins on ins.Idinterest = bi.Idinterest where ins.Idroom = '"+idroom+"' and bi.Idinterest= '"+idinterest+"'";
+
+                    
+                   var dataget = _context.InterestWithRooms.FromSqlRaw(sql).AsEnumerable().ToList();
+                   foreach (var datalistidbill in dataget) {
+                        var onlyresponse = new interestwithroom();
+                        onlyresponse.totalamount = datalistidbill.Totalamount;
+                        onlyresponse.idbill = datalistidbill.Idbill;
+                         var sqllist = "SELECT CONCAT(ch.RowChar, ch.NumberChair) AS RowChar,ch.Idcategorychair,ch.Idchair,tic.Idbill as bill,ch.NumberChair FROM cinema.ticket tic INNER JOIN cinema.chair ch ON ch.Idchair = tic.Idchair where tic.Idbill = '"+datalistidbill.Idbill+"';";
+                       var listchair = _context.CHAIRS.FromSqlRaw(sqllist).AsEnumerable().ToList();
+                         onlyresponse.chairess.AddRange(listchair);
+                         dataresponse.Add(onlyresponse);
+                   }
+                      successApiResponse.Status = 200;
+                     successApiResponse.Message = "OK";
+                     successApiResponse.Data = dataresponse;
+                 }
+                 catch (IndexOutOfRangeException ex)
+                  {
+    
+                  }     
+            // }else {
+            //     return BadRequest("khong tim thay thong tin");
+            // }
+                 
+
+           }
+
+        }
+ return Ok(successApiResponse);
+}
 
 public class DetailBills {
    public long? idbill {get;set;}
