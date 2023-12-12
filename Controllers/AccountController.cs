@@ -148,9 +148,11 @@ public IActionResult UpdateAccount([FromBody] UserDto account)
                    string sql = "CALL cinema.updateAccount(@p0,@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)";
                    _context.Database.ExecuteSqlRaw(sql, account.Idusers,account.Fullname,account.Email,account.Phone,account.Birthday,account.Avatar,account.gender,account.address,account.Idrole);
                    _context.SaveChanges();
+                       string sqlaccupdate = "CALL cinema.getInfoAccount(@p0)";
+                   var dataget = _context.Users.FromSqlRaw(sqlaccupdate, account.Idusers).AsEnumerable().FirstOrDefault();
                     successApiResponse.Status = 200;
-                     successApiResponse.Message = "OK";
-                     successApiResponse.Data = "cậpp nhậtt tàii khoảnn thànhh công";
+                     successApiResponse.Message = "cập nhật tài khoản thành công";
+                     successApiResponse.Data = dataget;
                       
             }else {
                 return BadRequest("Vui long nhap day du thong tin tai khoan");
@@ -164,7 +166,7 @@ public IActionResult UpdateAccount([FromBody] UserDto account)
 }
 // API GET INFO ACCOUNT
 [HttpGet("getInfoAccount")]
-public IActionResult UpdateAccount(long id)
+public IActionResult getInfoAccount(long id)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -582,7 +584,7 @@ public IActionResult ConfirmAccount([FromServices] IMemoryCache memoryCache,[Fro
                                      account.Idusers = users.Idusers;
                                     account.Username = user.username;
                                     account.Password = user.passwords;
-                                    account.points = 0;
+                                    account.points = 5000000; // 5000000vnd 
                                     _context.Accounts.Add(account);
                                     _context.SaveChanges();
                                     successApiResponse.Status = 200; // Internal Server Error

@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Http.Features;
 using webapiserver.Controllers;
 using System.Net.WebSockets;
 using Microsoft.AspNetCore.SignalR;
-
+// using webapiserver.Controllers.stockHub;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,10 +80,10 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
-// app.UseWebSockets();
+//app.UseWebSockets();
 // app.UseMiddleware<MiClaseSignalR>();
-app.MapHub<ChatHub>("/chatHub");
-app.MapControllers();
 
+app.MapControllers();
+// app.MapHub<stockHub>("/stockHub");
 
 app.Run();

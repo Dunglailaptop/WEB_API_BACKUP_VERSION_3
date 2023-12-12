@@ -188,6 +188,8 @@ public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill
                   
                try
                  {
+                  var datacheckpoint = _context.Accounts.Where(x=>x.Idusers == foodcombobill.iduser).SingleOrDefault();
+                  if (datacheckpoint.points >= foodcombobill.total_price){
                   FoodCombillPayment foodcombo = new FoodCombillPayment();
                   
                   foodcombo.idFoodlistcombo = 21;
@@ -228,10 +230,21 @@ public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill
                         var datafoodcombo = _context.Foodcombo.Where(x=>x.idcombo == list.Idfoodcombo).SingleOrDefault();
                          foodcombolist.Add(datafoodcombo);
                       }
-                   var checkbool = HashHelper.sendemail("ndung983@gmail.com",foodcombolist,foodcombo);
+                     var checkbool = HashHelper.sendemail("ndung983@gmail.com",foodcombolist,foodcombo);
+                      // update point 
+                      var dataaccountupdate = _context.Accounts.Find(foodcombobill.iduser);
+                      dataaccountupdate.points = foodcombobill.total_price - dataaccountupdate.points;
+                      _context.Accounts.Update(dataaccountupdate);
+                      _context.SaveChanges();
+                      //                 
                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = foodcombo;
+                  } else {
+                        successApiResponse.Status = 500;
+                     successApiResponse.Message = "Tài khoản của bạn không đủ điểm xin vui lòng liên hệ bên dịch vụ";
+                     successApiResponse.Data = "null";
+                  }
                  }
                  catch (IndexOutOfRangeException ex)
                   {

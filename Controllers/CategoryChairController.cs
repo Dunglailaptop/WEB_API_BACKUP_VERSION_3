@@ -255,9 +255,20 @@ public class categorychairs {
    public string nameroom {get;set;}
 }
 
+public class categorychairsnew {
+  
+   public int? price {get;set;}
+   public string namecategory {get;set;}
+   
+   public string colorchair {get;set;}
+
+   public long? idroom {get;set;}
+}
+
+
 // API GET LIST CHAIR in room
 [HttpPost("createCategoryChair")]
-public IActionResult createCategoryChair([FromBody] categorychairs categorychairinfo)
+public IActionResult createCategoryChair([FromBody] categorychairsnew categorychairinfo)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
