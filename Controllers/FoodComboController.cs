@@ -306,14 +306,19 @@ public IActionResult getListComboFood()
                    var data  = _context.Foodcombo.ToList();
                    List<foodCombowithfood> combodata = new List<foodCombowithfood>();
                    foreach (var itemcombo in data) {
+                     List<Food> foodlist = new List<Food>();
                      var dataFood = _context.FoodComboBill.Where(x=>x.idcombo == itemcombo.idcombo).ToList();
+                     foreach (var itemfood in dataFood) {
+                        var datainfood = _context.Foods.Where(x=>x.Idfood == itemfood.Idfood).SingleOrDefault();
+                        foodlist.Add(datainfood);
+                     }
                      foodCombowithfood foodcombowithfood = new foodCombowithfood {
                         idcombo = itemcombo.idcombo,
                         nametittle = itemcombo.nametittle,
                         descriptions = itemcombo.descriptions,
                         priceCombo = itemcombo.priceCombo,
                         picture = itemcombo.picture,
-                        foods = dataFood
+                        foods = foodlist
                      };
                  
                      
@@ -657,7 +662,7 @@ public class foodCombowithfood {
         public int priceCombo {get;set;}
 
         public string picture {get;set;}
-   public List<FoodComboBill> foods {get;set;}
+   public List<Food> foods {get;set;}
 }
 
 public class FoodComboNew {

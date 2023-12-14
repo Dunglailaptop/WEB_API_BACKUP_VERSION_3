@@ -236,6 +236,7 @@ public IActionResult getDetailMovies(long Idmovie)
                moviedetail.namecategorymovie = datacategoryMovie.Namecategorymovie;
                moviedetail.namenation = dataNation.Namenation;
                 moviedetail.Videofile = getvideofile.Videofile;
+                moviedetail.Statusshow = result.Statusshow;
               moviedetail.type = getvideofile.Types;
                 successApiResponse.Status = 200;
                 successApiResponse.Message = "OK";

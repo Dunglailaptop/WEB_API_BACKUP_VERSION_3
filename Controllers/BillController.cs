@@ -159,9 +159,20 @@ public IActionResult PaymentBill([FromBody] Bills bills)
  return Ok(successApiResponse);
 }
 
+public class foodresponse{
+   public int idfood {get;set;}
+   public int numberfood  {get;set;}
+
+   public int idcombo {get;set;}
+}
+
+public class PaymentbillfoodcomboResponse: paymentBillFoodCombo {
+   public List<foodresponse> listfood {get;set;} = new List<foodresponse>();
+}
+
 // API BILL PAYMENT FOODCOMBO
 [HttpPost("postPaymentFoodComboBill")]
-public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill)
+public IActionResult postPaymentFoodComboBill(PaymentbillfoodcomboResponse foodcombobill)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -210,8 +221,20 @@ public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill
                         list.idbillfood = foodcombo.id;
                         list.idfoodcombobill = foodcombo.id;
                         list.Idfoodcombo = item.Idfoodcombo;
+                        list.numberbuyincombo = item.numberbuyincombo;
                         _context.ListFoodCombo.Add(list);
                         _context.SaveChanges();       
+                        }
+                     }
+                     if (foodcombo.id != null) {
+                        foreach(var item in foodcombobill.listfood){
+                           ListFoodBillCombo listfoods = new ListFoodBillCombo();
+                           listfoods.idfood = item.idfood;
+                           listfoods.idbillCombo = foodcombo.id;
+                           listfoods.idcombo = item.idcombo;
+                           listfoods.numberbuy = item.numberfood;
+                           _context.ListFoodBillCombo.Add(listfoods);
+                           _context.SaveChanges();
                         }
                      } 
                      if (foodcombo.id != null){
@@ -232,8 +255,8 @@ public IActionResult postPaymentFoodComboBill(paymentBillFoodCombo foodcombobill
                       }
                      var checkbool = HashHelper.sendemail("ndung983@gmail.com",foodcombolist,foodcombo);
                       // update point 
-                      var dataaccountupdate = _context.Accounts.Find(foodcombobill.iduser);
-                      dataaccountupdate.points = foodcombobill.total_price - dataaccountupdate.points;
+                      var dataaccountupdate = _context.Accounts.Find(datacheckpoint.Username);
+                      dataaccountupdate.points =  dataaccountupdate.points - foodcombobill.total_price;
                       _context.Accounts.Update(dataaccountupdate);
                       _context.SaveChanges();
                       //                 
@@ -536,13 +559,38 @@ public IActionResult getListAllBillFoodCombo(int idcinema,int status,DateTime da
                       infobillfoodcombo.id = item.id;
                       infobillfoodcombo.status = item.statusbillfoodcombo;
                       var dataGetInfoListFoodCombo = _context.ListFoodCombo.Where(x => x.idfoodcombobill == item.id).ToList();
-
+                     
                       foreach (var item2 in dataGetInfoListFoodCombo) {
+                        var foodresponse = new FoodComboResponse();
                          var datagetFoodcomboonly = _context.Foodcombo.Where(x => x.idcombo == item2.Idfoodcombo).SingleOrDefault();
-                         infobillfoodcombo.listfoodcombo.Add(datagetFoodcomboonly);
+                         foodresponse.picture = datagetFoodcomboonly.picture;
+                         foodresponse.nametittle = datagetFoodcomboonly.nametittle;
+                         foodresponse.descriptions = datagetFoodcomboonly.descriptions;
+                         foodresponse.idcombo = datagetFoodcomboonly.idcombo;
+                         foodresponse.numberbuyincombo = item2.numberbuyincombo;
+                         foodresponse.priceCombo = datagetFoodcomboonly.priceCombo;
+                         foodresponse.numberbuyincombo = item2.numberbuyincombo;
+                         infobillfoodcombo.listfoodcombo.Add(foodresponse);
+                         //lặp qua danh sách idfood
+                              var datagetlistfood = _context.ListFoodBillCombo.Where(x=>x.idbillCombo == item.id && x.idcombo == datagetFoodcomboonly.idcombo).ToList();
+                           if (datagetlistfood != null){
+                           foreach (var item1 in datagetlistfood) {
+                            var foodresponses = new FoodResponse();
+                            var infofood = _context.Foods.Where(x=>x.Idfood == item1.idfood).SingleOrDefault();
+                            foodresponses.numberfood = item1.numberbuy;
+                            foodresponses.Idfood = item1.idfood;
+                            foodresponses.namefood = infofood.Namefood;
+                            foodresponses.picture = infofood.Picture;
+                            infobillfoodcombo.listfood.Add(foodresponses);
+                         }
+                           }
+
+
                         }
+                    
                          combobill.Add(infobillfoodcombo);
                       }
+                    
                       
 
                         successApiResponse.Status = 200;
@@ -593,24 +641,66 @@ public IActionResult getListBillFoodinAccount(long? iduser,int statusfoodbill)
                   
                try
                  {   
-                     
                       List<InfoBillFoodCombo> combobill = new List<InfoBillFoodCombo>();
-                      var dataBillFoodcombo = _context.FoodCombillPayment.Where(x => x.iduser == iduser && x.statusbillfoodcombo == statusfoodbill).ToList();
+                       var dataBillFoodcombo = _context.FoodCombillPayment.Where(x => x.iduser == iduser && x.statusbillfoodcombo == statusfoodbill).ToList();
 
                       foreach (var item in dataBillFoodcombo) {
-                     InfoBillFoodCombo infobillfoodcombo = new InfoBillFoodCombo();
+                      InfoBillFoodCombo infobillfoodcombo = new InfoBillFoodCombo();
                       infobillfoodcombo.total_prices = item.total_price;
                       infobillfoodcombo.quantity = item.numbers;
                       infobillfoodcombo.time = item.datetimes;
                       infobillfoodcombo.id = item.id;
+                      infobillfoodcombo.status = item.statusbillfoodcombo;
                       var dataGetInfoListFoodCombo = _context.ListFoodCombo.Where(x => x.idfoodcombobill == item.id).ToList();
-
+                    
                       foreach (var item2 in dataGetInfoListFoodCombo) {
+                        var foodresponse = new FoodComboResponse();
                          var datagetFoodcomboonly = _context.Foodcombo.Where(x => x.idcombo == item2.Idfoodcombo).SingleOrDefault();
-                         infobillfoodcombo.listfoodcombo.Add(datagetFoodcomboonly);
+                         foodresponse.picture = datagetFoodcomboonly.picture;
+                         foodresponse.nametittle = datagetFoodcomboonly.nametittle;
+                         foodresponse.descriptions = datagetFoodcomboonly.descriptions;
+                         foodresponse.idcombo = datagetFoodcomboonly.idcombo;
+                         foodresponse.numberbuyincombo = item2.numberbuyincombo;
+                         foodresponse.priceCombo = datagetFoodcomboonly.priceCombo;
+                           foodresponse.numberbuyincombo = item2.numberbuyincombo;
+                         infobillfoodcombo.listfoodcombo.Add(foodresponse);
+
+                         //lặp qua danh sách food
+                              var datagetlistfood = _context.ListFoodBillCombo.Where(x=>x.idbillCombo == item.id && x.idcombo == datagetFoodcomboonly.idcombo).ToList();
+                        if (datagetlistfood != null){
+                           foreach (var item1 in datagetlistfood) {
+                            var foodresponses = new FoodResponse();
+                            var infofood = _context.Foods.Where(x=>x.Idfood == item1.idfood).SingleOrDefault();
+                            foodresponses.numberfood = item1.numberbuy;
+                            foodresponses.Idfood = item1.idfood;
+                            foodresponses.namefood = infofood.Namefood;
+                            foodresponses.picture = infofood.Picture;
+                            infobillfoodcombo.listfood.Add(foodresponses);
+                         }
                         }
-                          combobill.Add(infobillfoodcombo);
+                        }
+                     
+
+                         combobill.Add(infobillfoodcombo);
                       }
+                     
+                     //  List<InfoBillFoodCombo> combobill = new List<InfoBillFoodCombo>();
+                     //  var dataBillFoodcombo = _context.FoodCombillPayment.Where(x => x.iduser == iduser && x.statusbillfoodcombo == statusfoodbill).ToList();
+
+                     //  foreach (var item in dataBillFoodcombo) {
+                     // InfoBillFoodCombo infobillfoodcombo = new InfoBillFoodCombo();
+                     //  infobillfoodcombo.total_prices = item.total_price;
+                     //  infobillfoodcombo.quantity = item.numbers;
+                     //  infobillfoodcombo.time = item.datetimes;
+                     //  infobillfoodcombo.id = item.id;
+                     //  var dataGetInfoListFoodCombo = _context.ListFoodCombo.Where(x => x.idfoodcombobill == item.id).ToList();
+
+                     //  foreach (var item2 in dataGetInfoListFoodCombo) {
+                     //     var datagetFoodcomboonly = _context.Foodcombo.Where(x => x.idcombo == item2.Idfoodcombo).SingleOrDefault();
+                     //     infobillfoodcombo.listfoodcombo.Add(datagetFoodcomboonly);
+                     //    }
+                     //      combobill.Add(infobillfoodcombo);
+                     //  }
                      
 
                         successApiResponse.Status = 200;
@@ -861,6 +951,19 @@ public class DetailFoodcombo {
    public string image {get;set;}
 
 }
+public class FoodComboResponse: FoodCombo {
+    public int numberbuyincombo {get;set;}
+}
+public class FoodResponse{
+   
+   public int Idfood {get;set;}
+   public int numberfood {get;set;}
+
+   public string namefood {get;set;}
+
+   public string picture {get;set;}
+
+}
 
 public class InfoBillFoodCombo {
 
@@ -873,8 +976,8 @@ public int quantity {get;set;}
 public DateTime time {get;set;}
 
 public int status {get;set;}
-public List<FoodCombo> listfoodcombo {get;set;} = new List<FoodCombo>();
-
+public List<FoodComboResponse> listfoodcombo {get;set;} = new List<FoodComboResponse>();
+public List<FoodResponse> listfood {get;set;} = new List<FoodResponse>();
 }
 
 public class InfoBill {
