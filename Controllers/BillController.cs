@@ -559,7 +559,8 @@ public IActionResult getListAllBillFoodCombo(int idcinema,int status,DateTime da
                       infobillfoodcombo.id = item.id;
                       infobillfoodcombo.status = item.statusbillfoodcombo;
                       var dataGetInfoListFoodCombo = _context.ListFoodCombo.Where(x => x.idfoodcombobill == item.id).ToList();
-                     
+                        var dataicinema = _context.Cinemas.Where(x=>x.Idcinema == item.idcinemas).SingleOrDefault();
+                      infobillfoodcombo.namecinema = dataicinema.Namecinema;
                       foreach (var item2 in dataGetInfoListFoodCombo) {
                         var foodresponse = new FoodComboResponse();
                          var datagetFoodcomboonly = _context.Foodcombo.Where(x => x.idcombo == item2.Idfoodcombo).SingleOrDefault();
@@ -581,6 +582,7 @@ public IActionResult getListAllBillFoodCombo(int idcinema,int status,DateTime da
                             foodresponses.Idfood = item1.idfood;
                             foodresponses.namefood = infofood.Namefood;
                             foodresponses.picture = infofood.Picture;
+                            foodresponses.idcombo = item1.idcombo;
                             infobillfoodcombo.listfood.Add(foodresponses);
                          }
                            }
@@ -652,7 +654,8 @@ public IActionResult getListBillFoodinAccount(long? iduser,int statusfoodbill)
                       infobillfoodcombo.id = item.id;
                       infobillfoodcombo.status = item.statusbillfoodcombo;
                       var dataGetInfoListFoodCombo = _context.ListFoodCombo.Where(x => x.idfoodcombobill == item.id).ToList();
-                    
+                      var dataicinema = _context.Cinemas.Where(x=>x.Idcinema == item.idcinemas).SingleOrDefault();
+                      infobillfoodcombo.namecinema = dataicinema.Namecinema;
                       foreach (var item2 in dataGetInfoListFoodCombo) {
                         var foodresponse = new FoodComboResponse();
                          var datagetFoodcomboonly = _context.Foodcombo.Where(x => x.idcombo == item2.Idfoodcombo).SingleOrDefault();
@@ -675,6 +678,7 @@ public IActionResult getListBillFoodinAccount(long? iduser,int statusfoodbill)
                             foodresponses.Idfood = item1.idfood;
                             foodresponses.namefood = infofood.Namefood;
                             foodresponses.picture = infofood.Picture;
+                            foodresponses.idcombo = item1.idcombo;
                             infobillfoodcombo.listfood.Add(foodresponses);
                          }
                         }
@@ -963,6 +967,8 @@ public class FoodResponse{
 
    public string picture {get;set;}
 
+   public int idcombo {get;set;}
+
 }
 
 public class InfoBillFoodCombo {
@@ -976,6 +982,9 @@ public int quantity {get;set;}
 public DateTime time {get;set;}
 
 public int status {get;set;}
+
+public string namecinema {get;set;}
+
 public List<FoodComboResponse> listfoodcombo {get;set;} = new List<FoodComboResponse>();
 public List<FoodResponse> listfood {get;set;} = new List<FoodResponse>();
 }
