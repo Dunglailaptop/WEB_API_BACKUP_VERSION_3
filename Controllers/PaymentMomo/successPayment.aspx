@@ -89,7 +89,7 @@
 }
 
 .success-title {
-  font-size: 120px;
+  font-size: 50px;
   text-align: center;
   color: #666;
   font-weight: bold;
@@ -109,14 +109,14 @@
   color: #333;
   font-weight: bold;
   .order-number-label {
-    font-size: 120px;
+    font-size: 50px;
     margin-bottom: 8px;
   }
   .order-number {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     line-height: 48px;
-    font-size: 120px;
+    font-size: 50px;
     padding: 8px 0;
     margin-bottom: 24px;
   }
@@ -125,7 +125,7 @@
 .order-footer {
   text-align: center;
   line-height: 18px;
-  font-size: 50px;
+  font-size: 30px;
   margin-bottom: 8px;
   font-weight: bold;
   color: #999;
@@ -148,8 +148,8 @@
                 PAYMENT SUCCESSFULL
               </div>
               <div class="order-details">
-                <div style="font-size: 120px;" class="order-number-label">Order Number:</div>
-                <div style="font-size: 120px; color:red" class="order-number"> {{name}}</div>
+                <div style="font-size: 50px;" class="order-number-label">Order Number:</div>
+                <div style="font-size: 50px; color:red" class="order-number"> {{name}}</div>
               </div>
               <div class="order-footer">Thank you!</div>
             </div>
