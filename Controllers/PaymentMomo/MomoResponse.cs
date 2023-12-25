@@ -16,6 +16,7 @@ using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
 using RestSharp;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.SignalR;
 // using MySql.Data.EntityFrameworkCore;
 
 namespace webapiserver.Controllers;
@@ -26,14 +27,15 @@ public class PaymentMomoController : ControllerBase
 {
         private readonly CinemaContext _context;
         private readonly VnpayConfig vnpayConfig;
+        private readonly IHubContext<OrderHub> _orderhub;
        
       private readonly IMemoryCache _memoryCache;
-        public PaymentMomoController(CinemaContext context,IOptions<VnpayConfig> VnpayConfigs,IMemoryCache memoryCache)
+        public PaymentMomoController(CinemaContext context,IOptions<VnpayConfig> VnpayConfigs,IMemoryCache memoryCache,IHubContext<OrderHub> orderhub)
         {
             _context = context;
             _memoryCache = memoryCache;
             this.vnpayConfig  = VnpayConfigs.Value;
-         
+         _orderhub = orderhub;
         }
 // lưu cache
  public void SetCacheValue<T>(string key, T value, TimeSpan expirationTime)
@@ -74,7 +76,7 @@ public class paymentrequest {
 }
 
    [HttpGet("MakePayment")]
-    public  IActionResult MakePayment(string vnp_Amount,string vnp_BankCode,string vnp_BankTranNo,string vnp_CardType,string vnp_OrderInfo ,
+    public async  Task<IActionResult> MakePayment(string vnp_Amount,string vnp_BankCode,string vnp_BankTranNo,string vnp_CardType,string vnp_OrderInfo ,
     string vnp_PayDate,
     string vnp_ResponseCode ,string vnp_TmnCode,string vnp_TransactionNo,string vnp_TransactionStatus,string vnp_TxnRef,string vnp_SecureHash)
     {
@@ -181,6 +183,17 @@ if (cachedData != null){
                      HashHelper.sendemailTicket("ndung983@gmail.com",chairs,billspay,foodcombo);
 
       //end======
+      //socket======
+        List<int?> listIdChair = new List<int?>();
+        var datalistchair = _context.Tickets.Where(x => x.Idbill == bl.Idbill).ToList();
+
+        foreach (var itemchair in datalistchair) {
+        listIdChair.Add(itemchair.Idchair);
+        }
+
+        int?[] arrayidchair = listIdChair.ToArray();
+          await _orderhub.Clients.All.SendAsync("HOADONMOI", arrayidchair);
+      //end====
        
         successApiResponse.Status = 200;
         successApiResponse.Message = "OK";

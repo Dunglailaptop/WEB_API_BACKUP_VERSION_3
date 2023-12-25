@@ -14,7 +14,7 @@ using MySql.Data.MySqlClient;
 using System.Net.Mail;
 using SendGrid;
 using SendGrid.Helpers.Mail;
-
+using Microsoft.AspNetCore.SignalR;
 
 namespace webapiserver.Controllers;
 
@@ -23,17 +23,18 @@ namespace webapiserver.Controllers;
 public class BillController : ControllerBase
 {
         private readonly CinemaContext _context;
-        public BillController(CinemaContext context)
+        private readonly IHubContext<OrderHub> _orderhub; 
+        public BillController(CinemaContext context,IHubContext<OrderHub> orderhub)
         {
             _context = context;
-            
+            _orderhub = orderhub;
         }
 
 
 
 // API GET LIST CHAIR in room - thanh toan tai quay
 [HttpPost("PaymentBill")]
-public IActionResult PaymentBill([FromBody] Bills bills)
+public async Task<IActionResult> PaymentBill([FromBody] Bills bills)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -131,6 +132,22 @@ public IActionResult PaymentBill([FromBody] Bills bills)
                         foodcombo.Add(datacombo);
                      }
                      HashHelper.sendemailTicket("ndung983@gmail.com",chairs,billspay,foodcombo);
+                     ///
+                     // ban socket 
+                     // SignalR.
+                     // _orderhub.Clients.All.SendAsync("moi co bill");
+                        //  await _orderhub.Clients.All.SendAsync("ReceiveMessage", "This is a message from the server.");
+                        //socket======
+                        List<int?> listIdChair = new List<int?>();
+                        var datalistchair = _context.Tickets.Where(x => x.Idbill == bl.Idbill).ToList();
+
+                        foreach (var itemchair in datalistchair) {
+                        listIdChair.Add(itemchair.Idchair);
+                        }
+
+                        int?[] arrayidchair = listIdChair.ToArray();
+                        await _orderhub.Clients.All.SendAsync("HOADONMOI", arrayidchair);
+                        //end====
                      ///
                        successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";

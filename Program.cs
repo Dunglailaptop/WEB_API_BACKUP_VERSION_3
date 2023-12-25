@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Http.Features;
 using webapiserver.Controllers;
 using System.Net.WebSockets;
 using Microsoft.AspNetCore.SignalR;
-// using webapiserver.Controllers.stockHub;
+using webapiserver.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,24 +29,45 @@ builder.Services.AddDbContext<CinemaContext>(optionsAction: _=>
 });
 
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidIssuer = "your_issuer_here", // Replace with your JWT issuer
-            ValidAudience = "your_audience_here", // Replace with your JWT audience
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your_secret_key_here")) // Replace with your JWT secret key
-        };
-    });
+// builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//     .AddJwtBearer(options =>
+//     {
+//         options.TokenValidationParameters = new TokenValidationParameters
+//         {
+//             ValidateIssuer = true,
+//             ValidateAudience = true,
+//             ValidIssuer = "your_issuer_here", // Replace with your JWT issuer
+//             ValidAudience = "your_audience_here", // Replace with your JWT audience
+//             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your_secret_key_here")) // Replace with your JWT secret key
+//         };
+//     });
 
 
         builder.Services.Configure<FormOptions>(options =>
         {
             options.MultipartBodyLengthLimit = 104857600; // 100 MB limit (in bytes)
         });
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(opt =>{
+	opt.TokenValidationParameters = new TokenValidationParameters
+        {
+			// token validation code
+        };
+        opt.Events = new JwtBearerEvents
+        {
+			OnMessageReceived = context => {
+				var accessToken = context.Request.Query["access_token"];
+				var path = context.HttpContext.Request.Path;
+				if (!string.IsNullOrEmpty(accessToken) 
+					&& path.StartsWithSegments("/kitchen"))
+				{
+					context.Token = accessToken;
+				}
+				return Task.CompletedTask;
+			}
+        };
+    });
+
 
         // ...
     
@@ -58,11 +79,11 @@ builder.Services.AddMemoryCache();
 var app = builder.Build();
 // app.MapHub<MiClaseSignalR>("/signalR");
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+// }
 
 
 
@@ -84,6 +105,12 @@ app.UseAuthorization();
 // app.UseMiddleware<MiClaseSignalR>();
 
 app.MapControllers();
+app.UseRouting();
+// app.UseEndpoints(endpoints =>
+//     {
+//         endpoints.MapHub<stockHub>("/stockHub");
+//         endpoints.MapControllers();
+//     });
 // app.MapHub<stockHub>("/stockHub");
-
+app.MapHub<OrderHub>("/kitchen");
 app.Run();
