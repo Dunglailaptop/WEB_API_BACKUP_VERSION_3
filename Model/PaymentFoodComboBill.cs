@@ -23,5 +23,7 @@ public partial class FoodCombillPayment
     public int statusbillfoodcombo {get;set;}
 
     public int idvoucher {get;set;}
+
+    public DateTime dateget {get;set;}
     
 }

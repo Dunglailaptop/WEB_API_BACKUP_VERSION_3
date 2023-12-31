@@ -229,6 +229,7 @@ public IActionResult postPaymentFoodComboBill(PaymentbillfoodcomboResponse foodc
                   foodcombo.idcinemas = foodcombobill.idcinemas;
                   foodcombo.statusbillfoodcombo = 0;
                   foodcombo.idvoucher = foodcombobill.idvoucher;
+                  foodcombo.dateget = foodcombobill.dateget;
                      _context.FoodCombillPayment.Add(foodcombo);
                      _context.SaveChanges();
                      if (foodcombo.id != null) {
@@ -670,6 +671,21 @@ public IActionResult getListBillFoodinAccount(long? iduser,int statusfoodbill)
                       infobillfoodcombo.time = item.datetimes;
                       infobillfoodcombo.id = item.id;
                       infobillfoodcombo.status = item.statusbillfoodcombo;
+                      infobillfoodcombo.dateget = item.dateget;
+                      var datavoucher = _context.Vouchers.Where(x=>x.Idvoucher == item.idvoucher).SingleOrDefault();
+                      if (datavoucher != null) {
+                      infobillfoodcombo.namevoucher = datavoucher.Namevoucher;
+                      infobillfoodcombo.poster = datavoucher.Poster;
+                      infobillfoodcombo.Percent = datavoucher.Percent;
+                      infobillfoodcombo.Price = datavoucher.Price;
+                      }
+                     //  if (datavoucher.Percent != 0) {
+                     //       infobillfoodcombo.Percent = datavoucher.Percent;
+                     //       infobillfoodcombo.Price = 0;
+                     //  }else {
+                     //    infobillfoodcombo.Percent = 0;
+                     //         infobillfoodcombo.Price = datavoucher.Price;
+                     //  }
                       var dataGetInfoListFoodCombo = _context.ListFoodCombo.Where(x => x.idfoodcombobill == item.id).ToList();
                       var dataicinema = _context.Cinemas.Where(x=>x.Idcinema == item.idcinemas).SingleOrDefault();
                       infobillfoodcombo.namecinema = dataicinema.Namecinema;
@@ -785,7 +801,7 @@ public IActionResult getDetailBill(long? idbill)
                 var datamovie = _context.Movies.FirstOrDefault(x => x.Idmovie == datainterest.Idmovie);
                 var dataroom = _context.Rooms.FirstOrDefault(x => x.Idroom == datainterest.Idroom);
                 var datafoodcombo = _context.FoodComboWithBills.Where(x => x.Idbill == data.Idbill).ToList();
-
+                var datavoucher = _context.Vouchers.Where(x=>x.Idvoucher == data.Idvoucher).SingleOrDefault();
                 billes.idbill = data.Idbill;
                 billes.namemovie = datamovie?.Namemovie; // Use safe navigation operator to avoid null reference exception
                 billes.showMovie = datainterest?.Dateshow; // Use safe navigation operator to avoid null reference exception
@@ -798,6 +814,10 @@ public IActionResult getDetailBill(long? idbill)
                 billes.idroom = dataroom?.Idroom; // Use safe navigation operator to avoid null reference exception
                 billes.total_price = data.Totalamount;
                 billes.quantityticket = data.Quantityticket;
+                billes.namevoucher = datavoucher.Namevoucher;
+                billes.poster = datavoucher.Poster;
+                billes.price = datavoucher.Price;
+                billes.percent = datavoucher.Percent;
                 List<DetailTickets> chairs = new List<DetailTickets>(); // Create a list of Chair objects
 
                  foreach (var item in dataticket)
@@ -928,6 +948,10 @@ public IActionResult getlistinterestwithroom(int idroom,int idinterest)
 }
 
 public class DetailBills {
+   public string namevoucher {get;set;}
+   public string poster {get;set;}
+   public int? price {get;set;}
+   public int? percent {get;set;}
    public long? idbill {get;set;}
    public DateTime? DateBill {get;set;}
    public string namemovie {get;set;}
@@ -989,6 +1013,10 @@ public class FoodResponse{
 }
 
 public class InfoBillFoodCombo {
+   public int? Price {get;set;}
+   public int? Percent {get;set;}
+   public string namevoucher {get;set;}
+   public string poster {get;set;}
 
   public int id {get;set;}
   
@@ -1001,6 +1029,7 @@ public DateTime time {get;set;}
 public int status {get;set;}
 
 public string namecinema {get;set;}
+public DateTime dateget {get;set;}
 
 public List<FoodComboResponse> listfoodcombo {get;set;} = new List<FoodComboResponse>();
 public List<FoodResponse> listfood {get;set;} = new List<FoodResponse>();
@@ -1049,6 +1078,7 @@ public class paymentBillFoodCombo {
   public List<ListFoodCombo> foodComboBills {get;set;}
 
   public int idvoucher {get;set;}
+  public DateTime dateget {get;set;}
   
 }
 
