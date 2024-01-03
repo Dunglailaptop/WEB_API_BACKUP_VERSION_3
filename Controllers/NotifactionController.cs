@@ -59,7 +59,16 @@ public IActionResult getNotifactionInUser(long iduser,int type)
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = dataget;
                     }else if (type == 2) {
-                       var dataget = _context.Notifaction.ToList();
+                              // Lấy ngày hiện tại
+                        DateTime currentDate = DateTime.Now.Date;
+
+                        // Lấy dữ liệu từ 00:00:00 đến 23:59:59 của ngày hiện tại
+                        DateTime startDate = currentDate.Date; // 00:00:00
+                        DateTime endDate = currentDate.Date.AddDays(1).AddTicks(-1); // 23:59:59
+
+                        var dataget = _context.Notifaction
+                        .Where(x => x.datecreate >= startDate && x.datecreate <= endDate)
+                        .ToList();
                       successApiResponse.Status = 200;
                      successApiResponse.Message = "OK";
                      successApiResponse.Data = dataget;

@@ -9,4 +9,5 @@ public partial class Notifaction
     public string  messages  {get;set;}
      public DateTime  datecreate {get;set;} 
       public long? iduser {get;set;}
+      public string image_noti {get;set;}
 }

@@ -31,7 +31,10 @@ public class BillController : ControllerBase
         }
 
 
-
+public class responeBillsocket {
+  public long idbill {get;set;}
+  public int?[] tickets {get;set;}
+}
 // API GET LIST CHAIR in room - thanh toan tai quay
 [HttpPost("PaymentBill")]
 public async Task<IActionResult> PaymentBill([FromBody] Bills bills)
@@ -117,6 +120,7 @@ public async Task<IActionResult> PaymentBill([FromBody] Bills bills)
                      datanotifaction.messages = "Bạn có đơn hàng mới với mã hoá đơn của bạn là: " + billspay.Idbill;
                      datanotifaction.iduser = billspay.Iduser;
                      datanotifaction.datecreate = DateTime.Now;
+                     datanotifaction.image_noti = "null";
                      _context.Notifaction.Add(datanotifaction);
                      _context.SaveChanges();
                     }
@@ -146,7 +150,10 @@ public async Task<IActionResult> PaymentBill([FromBody] Bills bills)
                         }
 
                         int?[] arrayidchair = listIdChair.ToArray();
-                        await _orderhub.Clients.All.SendAsync("HOADONMOI", arrayidchair);
+                        var responsesocket = new responeBillsocket();
+                        responsesocket.tickets = arrayidchair;
+                        responsesocket.idbill = bl.Idbill;
+                        await _orderhub.Clients.All.SendAsync("HOADONMOI", responsesocket);
                         //end====
                      ///
                        successApiResponse.Status = 200;
@@ -260,6 +267,7 @@ public IActionResult postPaymentFoodComboBill(PaymentbillfoodcomboResponse foodc
                         datanotifaction.messages = "Bạn có hoá đơn đặt món ăn mới vui lòng kiểm tra thông tin với mã hoá đơn là: " + foodcombo.id;
                         datanotifaction.iduser = foodcombo.iduser;
                         datanotifaction.datecreate = DateTime.Now;
+                        datanotifaction.image_noti = "null";
                         _context.Notifaction.Add(datanotifaction);
                         _context.SaveChanges();
                      }

@@ -74,6 +74,10 @@ public class paymentrequest {
 
        public string vnp_SecureHash {get;set;}
 }
+public class responeBillsocket {
+  public long idbill {get;set;}
+  public int?[] tickets {get;set;}
+}
 
    [HttpGet("MakePayment")]
     public async  Task<IActionResult> MakePayment(string vnp_Amount,string vnp_BankCode,string vnp_BankTranNo,string vnp_CardType,string vnp_OrderInfo ,
@@ -163,6 +167,7 @@ if (cachedData != null){
             datanotifaction.messages = "Bạn có mã hoá đơn mua vé mới với mã là: " + billspay.Idbill;
             datanotifaction.iduser = billspay.Iduser;
             datanotifaction.datecreate = DateTime.Now;
+            datanotifaction.image_noti = "null";
             _context.Notifaction.Add(datanotifaction);
             _context.SaveChanges();
         }
@@ -192,7 +197,10 @@ if (cachedData != null){
         }
 
         int?[] arrayidchair = listIdChair.ToArray();
-          await _orderhub.Clients.All.SendAsync("HOADONMOI", arrayidchair);
+        var responsesocket = new responeBillsocket();
+        responsesocket.tickets = arrayidchair;
+        responsesocket.idbill = bl.Idbill;
+          await _orderhub.Clients.All.SendAsync("HOADONMOI",responsesocket);
       //end====
        
         successApiResponse.Status = 200;
@@ -283,6 +291,7 @@ if (cachedData != null){
                         datanotifaction.messages = "Bạn có hoá đơn đặt món ăn mới vui lòng kiểm tra thông tin với mã hoá đơn là: " + foodcombo.id;
                         datanotifaction.iduser = foodcombo.iduser;
                         datanotifaction.datecreate = DateTime.Now;
+                        datanotifaction.image_noti = "null";
                         _context.Notifaction.Add(datanotifaction);
                         _context.SaveChanges();
                      }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Linq;
-
+using Microsoft.AspNetCore.SignalR;
 
 namespace webapiserver.Controllers;
 
@@ -22,9 +22,11 @@ public class MovieController : ControllerBase
 {
         private readonly CinemaContext _context;
           private readonly IWebHostEnvironment _environment;
+          private readonly IHubContext<OrderHub> _orderhub;
 
-        public MovieController(CinemaContext context, IWebHostEnvironment environment)
+        public MovieController(CinemaContext context, IWebHostEnvironment environment,IHubContext<OrderHub> orderhub)
         {
+            _orderhub = orderhub;
             _context = context;
             _environment = environment;
         }
@@ -276,9 +278,12 @@ public class NewMovie {
 
   
 }
+public class notifacationresponse: Notifaction {
+    public string image {get;set;}
+}
 
 [HttpPost("CreateMovieNew")]
-public IActionResult CreateMovieNew([FromBody] NewMovie newmovie)
+public async Task<IActionResult> CreateMovieNew([FromBody] NewMovie newmovie)
 {
     // khoi tao api response
     var successApiResponse = new ApiResponse();
@@ -331,6 +336,22 @@ public IActionResult CreateMovieNew([FromBody] NewMovie newmovie)
                     movienew.Yearbirthday = newmovie.Yearbirthday;
                     _context.Movies.Add(movienew);
                     _context.SaveChanges();
+                    // thông báo
+                    var Notifactions = new Notifaction();
+                    var datauser = _context.Users.Where(x=>x.Idusers == newmovie.Iduser).SingleOrDefault();
+                    Notifactions.messages = "Quản lý :" + datauser.Fullname + "- vừa tạo phim mới với tên phim" + movienew.Namemovie;
+                    Notifactions.datecreate = DateTime.Now;
+                    Notifactions.iduser = datauser.Idusers;
+                    Notifactions.image_noti = movienew.Poster;
+                    _context.Notifaction.Add(Notifactions);
+                    _context.SaveChanges();
+                    var notifacationresponses = new notifacationresponse();
+                    notifacationresponses.messages = Notifactions.messages;
+                    notifacationresponses.datecreate = Notifactions.datecreate;
+                    notifacationresponses.iduser = Notifactions.iduser;
+                    notifacationresponses.image = movienew.Poster;
+                    // socket 
+                   await _orderhub.Clients.All.SendAsync("NOTIFACTIONMOVIENEW",notifacationresponses);
                     successApiResponse.Status = 200;
                     successApiResponse.Message = "OK";
                     successApiResponse.Data = movienew;
