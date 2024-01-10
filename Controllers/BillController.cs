@@ -34,6 +34,7 @@ public class BillController : ControllerBase
 public class responeBillsocket {
   public long idbill {get;set;}
   public int?[] tickets {get;set;}
+  public long? Idusers {get;set;}
 }
 // API GET LIST CHAIR in room - thanh toan tai quay
 [HttpPost("PaymentBill")]
@@ -153,6 +154,7 @@ public async Task<IActionResult> PaymentBill([FromBody] Bills bills)
                         var responsesocket = new responeBillsocket();
                         responsesocket.tickets = arrayidchair;
                         responsesocket.idbill = bl.Idbill;
+                        responsesocket.Idusers = billspay.Iduser;
                         await _orderhub.Clients.All.SendAsync("HOADONMOI", responsesocket);
                         //end====
                      ///

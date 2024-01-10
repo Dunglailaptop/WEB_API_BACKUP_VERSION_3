@@ -77,6 +77,7 @@ public class paymentrequest {
 public class responeBillsocket {
   public long idbill {get;set;}
   public int?[] tickets {get;set;}
+  public long? Idusers {get;set;}
 }
 
    [HttpGet("MakePayment")]
@@ -200,6 +201,7 @@ if (cachedData != null){
         var responsesocket = new responeBillsocket();
         responsesocket.tickets = arrayidchair;
         responsesocket.idbill = bl.Idbill;
+        responsesocket.Idusers = billspay.Iduser;
           await _orderhub.Clients.All.SendAsync("HOADONMOI",responsesocket);
       //end====
        
