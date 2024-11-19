@@ -25,7 +25,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CinemaContext>(optionsAction: _=>
 {
-    _.UseMySQL(connectionString:"Server=localhost;Database=cinema;Uid=root;Pwd=2792001dung");
+    _.UseMySQL(connectionString:"Server=localhost;Port=3306;Database=cinema;Uid=root;Pwd=2792001dung");
 });
 
 
@@ -81,8 +81,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
 // {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwagger();
+app.UseSwaggerUI();
 // }
 
 
