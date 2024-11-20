@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace MyCinema.Model;
 
@@ -10,41 +12,53 @@ public partial class CinemaContext : DbContext
     {
     }
 
-    public CinemaContext(DbContextOptions<CinemaContext> options)
-        : base(options)
+    public CinemaContext(DbContextOptions<CinemaContext> options): base(options)
     {
+        try
+        {
+            var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
+            if (databaseCreator != null)
+            {
+                if (!databaseCreator.CanConnect()) databaseCreator.Create();
+                if (!databaseCreator.HasTables()) databaseCreator.CreateTables();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
     //INNNER JOIN START
-    public DbSet<likeandcomment> likeandcomment {get;set;}
-    public DbSet<CommentVideo> CommentVideo {get;set;}
-    public DbSet<checkin> checkin {get;set;}
-    public DbSet<ListFoodBillCombo> ListFoodBillCombo {get;set;}
-    public DbSet<InterestWithRoom> InterestWithRooms {get;set;}
-    public DbSet<paymentVNPAY> paymentVNPAY {get;set;}
-      public DbSet<ReportFoodCombo> ReportFoodCombos {get;set;}
-    public DbSet<ReportTicket> ReportTickets {get;set;}
- public DbSet<totalfoodcombowithbill> totalfoodcombowithbills {get;set;}
-      public DbSet<ReportFoodComboALL> ReportFoodComboALLs {get;set;}
-    public DbSet<ReportTicketALL> ReportTicketALLs {get;set;}
-    public DbSet<ReportMovie> ReportMovies {get;set;}
-    public DbSet<ReportFood> ReportFoods {get;set;}
-     public DbSet<FoodComboWithBills>  FoodComboWithBills { get; set; }
-     public DbSet<FoodComboBill> FoodComboBill { get; set; }
-     public DbSet<FoodCombo> Foodcombo { get; set; }
+    public DbSet<likeandcomment> likeandcomment { get; set; }
+    public DbSet<CommentVideo> CommentVideo { get; set; }
+    public DbSet<checkin> checkin { get; set; }
+    public DbSet<ListFoodBillCombo> ListFoodBillCombo { get; set; }
+    public DbSet<InterestWithRoom> InterestWithRooms { get; set; }
+    public DbSet<paymentVNPAY> paymentVNPAY { get; set; }
+    public DbSet<ReportFoodCombo> ReportFoodCombos { get; set; }
+    public DbSet<ReportTicket> ReportTickets { get; set; }
+    public DbSet<totalfoodcombowithbill> totalfoodcombowithbills { get; set; }
+    public DbSet<ReportFoodComboALL> ReportFoodComboALLs { get; set; }
+    public DbSet<ReportTicketALL> ReportTicketALLs { get; set; }
+    public DbSet<ReportMovie> ReportMovies { get; set; }
+    public DbSet<ReportFood> ReportFoods { get; set; }
+    public DbSet<FoodComboWithBills> FoodComboWithBills { get; set; }
+    public DbSet<FoodComboBill> FoodComboBill { get; set; }
+    public DbSet<FoodCombo> Foodcombo { get; set; }
     public DbSet<CINEMA> CINEMAS { get; set; }
-      public DbSet<USERS> USERS { get; set; }
-     public DbSet<CHAIR> CHAIRS { get; set; }
-       public DbSet<CHAIRDETAILBILL> CHAIRSDETAIL { get; set; }
+    public DbSet<USERS> USERS { get; set; }
+    public DbSet<CHAIR> CHAIRS { get; set; }
+    public DbSet<CHAIRDETAILBILL> CHAIRSDETAIL { get; set; }
     public DbSet<INTERESTCINEMA> INTERESTCINEMA { get; set; }
-    public DbSet<LISTCINEMA> LISTCINEMA {get;set;}
+    public DbSet<LISTCINEMA> LISTCINEMA { get; set; }
 
-    public DbSet<FoodCombillPayment> FoodCombillPayment {get;set;}
+    public DbSet<FoodCombillPayment> FoodCombillPayment { get; set; }
 
-    public DbSet<ListFoodCombo> ListFoodCombo {get;set;}
+    public DbSet<ListFoodCombo> ListFoodCombo { get; set; }
 
-    public DbSet<MoviesBooking> moviesBookings {get;set;}
+    public DbSet<MoviesBooking> moviesBookings { get; set; }
 
-    public DbSet<Notifaction> Notifaction {get;set;}
+    public DbSet<Notifaction> Notifaction { get; set; }
     //INNERHOIN END
     public virtual DbSet<Account> Accounts { get; set; }
 
@@ -94,7 +108,7 @@ public partial class CinemaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySQL("Server=localhost;Database=cinema;Uid=root;Pwd=2792001dung");
+        => optionsBuilder.UseMySQL("Server=DatabaseMysql;Port=3306;Database=ChatApp;Uid=root;Pwd=1234;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -501,73 +515,73 @@ public partial class CinemaContext : DbContext
             entity.Property(e => e.Poster).HasMaxLength(255);
         });
         //INNER JOIN START
-           modelBuilder.Entity<InterestWithRoom>()
-        .HasNoKey();
-          modelBuilder.Entity<INTERESTCINEMA>()
-        .HasNoKey(); // Assuming 'Id' is the primary key property name.
-         modelBuilder.Entity<LISTCINEMA>()
-        .HasNoKey();
+        modelBuilder.Entity<InterestWithRoom>()
+     .HasNoKey();
+        modelBuilder.Entity<INTERESTCINEMA>()
+      .HasNoKey(); // Assuming 'Id' is the primary key property name.
+        modelBuilder.Entity<LISTCINEMA>()
+       .HasNoKey();
         OnModelCreatingPartial(modelBuilder);
-               modelBuilder.Entity<CHAIR>()
-        .HasNoKey();
-         OnModelCreatingPartial(modelBuilder);
-               modelBuilder.Entity<CHAIRDETAILBILL>()
-        .HasNoKey();
+        modelBuilder.Entity<CHAIR>()
+ .HasNoKey();
         OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<USERS>()
-        .HasNoKey();
+        modelBuilder.Entity<CHAIRDETAILBILL>()
+ .HasNoKey();
         OnModelCreatingPartial(modelBuilder);
-         OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<CINEMA>()
-        .HasNoKey();
-           OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<ReportTicket>()
-        .HasNoKey();
-          OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<ReportFoodCombo>()
-        .HasNoKey();
-              OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<ReportTicketALL>()
-        .HasNoKey();
-          OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<ReportFoodComboALL>()
-        .HasNoKey();
-          OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<ReportMovie>()
-        .HasNoKey();
-           OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<ReportFood>()
-        .HasNoKey();
-         OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<totalfoodcombowithbill>()
-        .HasNoKey();
-          OnModelCreatingPartial(modelBuilder);
-          modelBuilder.Entity<MoviesBooking>()
-        .HasNoKey();
-            modelBuilder.Entity<FoodCombo>()
-            .HasKey(fc => fc.idcombo); // Assuming Id is the primary key property
-           modelBuilder.Entity<FoodComboBill>()
-            .HasKey(fc => fc.Id); 
-              modelBuilder.Entity<FoodComboWithBills>()
-            .HasKey(fc => fc.IdBillfoodCombo); 
-               modelBuilder.Entity<FoodCombillPayment>()
-            .HasKey(fc => fc.id); 
-               modelBuilder.Entity<ListFoodCombo>()
-            .HasKey(fc => fc.id);
-                 modelBuilder.Entity<Notifaction>()
-            .HasKey(fc => fc.idnotifaction);
-                 modelBuilder.Entity<checkin>()
-            .HasKey(fc => fc.idcheckin);
-                     modelBuilder.Entity<ListFoodBillCombo>()
-            .HasKey(fc => fc.idlistfood);
-                modelBuilder.Entity<CommentVideo>().HasKey(fc => fc.idcomment);
-                modelBuilder.Entity<likeandcomment>().HasKey(fc => fc.idliekandcomment);
-            modelBuilder.Entity<paymentVNPAY>().HasKey(fc => fc.idpaymentvnpay);
+        modelBuilder.Entity<USERS>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<CINEMA>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<ReportTicket>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<ReportFoodCombo>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<ReportTicketALL>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<ReportFoodComboALL>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<ReportMovie>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<ReportFood>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<totalfoodcombowithbill>()
+      .HasNoKey();
+        OnModelCreatingPartial(modelBuilder);
+        modelBuilder.Entity<MoviesBooking>()
+      .HasNoKey();
+        modelBuilder.Entity<FoodCombo>()
+        .HasKey(fc => fc.idcombo); // Assuming Id is the primary key property
+        modelBuilder.Entity<FoodComboBill>()
+         .HasKey(fc => fc.Id);
+        modelBuilder.Entity<FoodComboWithBills>()
+      .HasKey(fc => fc.IdBillfoodCombo);
+        modelBuilder.Entity<FoodCombillPayment>()
+     .HasKey(fc => fc.id);
+        modelBuilder.Entity<ListFoodCombo>()
+     .HasKey(fc => fc.id);
+        modelBuilder.Entity<Notifaction>()
+   .HasKey(fc => fc.idnotifaction);
+        modelBuilder.Entity<checkin>()
+   .HasKey(fc => fc.idcheckin);
+        modelBuilder.Entity<ListFoodBillCombo>()
+.HasKey(fc => fc.idlistfood);
+        modelBuilder.Entity<CommentVideo>().HasKey(fc => fc.idcomment);
+        modelBuilder.Entity<likeandcomment>().HasKey(fc => fc.idliekandcomment);
+        modelBuilder.Entity<paymentVNPAY>().HasKey(fc => fc.idpaymentvnpay);
         //INNER JOIN END
     }
     //   protected override void OnModelCreating(ModelBuilder modelBuilder)
     //    {
-          
+
     //   }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

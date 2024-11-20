@@ -1,0 +1,637 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\0032A450-02C6-4091-B392-73D54152679D.jpeg\\0032A450-02C6-4091-B392-73D54152679D.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\0032A450-02C6-4091-B392-73D54152679D.jpeg\\0032A450-02C6-4091-B392-73D54152679D.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\00F0FB6D-7FA2-4C0F-9C76-21B4911C4E31.jpeg\\00F0FB6D-7FA2-4C0F-9C76-21B4911C4E31.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\00F0FB6D-7FA2-4C0F-9C76-21B4911C4E31.jpeg\\00F0FB6D-7FA2-4C0F-9C76-21B4911C4E31.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\01D48D5D-83E3-47A5-8CE1-278EBC652327.jpeg\\01D48D5D-83E3-47A5-8CE1-278EBC652327.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\01D48D5D-83E3-47A5-8CE1-278EBC652327.jpeg\\01D48D5D-83E3-47A5-8CE1-278EBC652327.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\025858C3-EF1C-4B2A-B415-94B570BB0542.jpeg\\025858C3-EF1C-4B2A-B415-94B570BB0542.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\025858C3-EF1C-4B2A-B415-94B570BB0542.jpeg\\025858C3-EF1C-4B2A-B415-94B570BB0542.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\0284FF80-7851-4ADC-88FE-331810022281.webp\\0284FF80-7851-4ADC-88FE-331810022281.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\0284FF80-7851-4ADC-88FE-331810022281.webp\\0284FF80-7851-4ADC-88FE-331810022281.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\04F1D827-D8AB-4ABD-A28C-FB4A8B91389C.jpeg\\04F1D827-D8AB-4ABD-A28C-FB4A8B91389C.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\04F1D827-D8AB-4ABD-A28C-FB4A8B91389C.jpeg\\04F1D827-D8AB-4ABD-A28C-FB4A8B91389C.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\05D81590-FB58-4B17-A5F2-9E1C4A4E7F22.jpeg\\05D81590-FB58-4B17-A5F2-9E1C4A4E7F22.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\05D81590-FB58-4B17-A5F2-9E1C4A4E7F22.jpeg\\05D81590-FB58-4B17-A5F2-9E1C4A4E7F22.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\0662F88B-6B66-41EF-A02D-9993770D0732.png\\0662F88B-6B66-41EF-A02D-9993770D0732.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\0662F88B-6B66-41EF-A02D-9993770D0732.png\\0662F88B-6B66-41EF-A02D-9993770D0732.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\087C0A83-E114-4597-A5FD-BF1ED5703315.jpeg\\087C0A83-E114-4597-A5FD-BF1ED5703315.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\087C0A83-E114-4597-A5FD-BF1ED5703315.jpeg\\087C0A83-E114-4597-A5FD-BF1ED5703315.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\0905A260-F26B-4D35-91A9-52E6C372EB29.jpeg\\0905A260-F26B-4D35-91A9-52E6C372EB29.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\0905A260-F26B-4D35-91A9-52E6C372EB29.jpeg\\0905A260-F26B-4D35-91A9-52E6C372EB29.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\09F42B52-85B7-4619-BC80-5AEEC1BDD661.webp\\09F42B52-85B7-4619-BC80-5AEEC1BDD661.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\09F42B52-85B7-4619-BC80-5AEEC1BDD661.webp\\09F42B52-85B7-4619-BC80-5AEEC1BDD661.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\0DBD9734-6787-4950-8348-348312550ADC.webp\\0DBD9734-6787-4950-8348-348312550ADC.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\0DBD9734-6787-4950-8348-348312550ADC.webp\\0DBD9734-6787-4950-8348-348312550ADC.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\0DD4DF82-1D3E-4FD3-987F-23FEFF6B30FA.jpeg\\0DD4DF82-1D3E-4FD3-987F-23FEFF6B30FA.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\0DD4DF82-1D3E-4FD3-987F-23FEFF6B30FA.jpeg\\0DD4DF82-1D3E-4FD3-987F-23FEFF6B30FA.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\1033915F-FF46-4055-8971-C5E6B43D515A.jpeg\\1033915F-FF46-4055-8971-C5E6B43D515A.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\1033915F-FF46-4055-8971-C5E6B43D515A.jpeg\\1033915F-FF46-4055-8971-C5E6B43D515A.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\1375B440-5D1F-4813-AA8A-1AA109DC76E4.jpeg\\1375B440-5D1F-4813-AA8A-1AA109DC76E4.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\1375B440-5D1F-4813-AA8A-1AA109DC76E4.jpeg\\1375B440-5D1F-4813-AA8A-1AA109DC76E4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\17F501D6-3CF8-4B15-91FE-1BF9F88C836D.jpeg\\17F501D6-3CF8-4B15-91FE-1BF9F88C836D.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\17F501D6-3CF8-4B15-91FE-1BF9F88C836D.jpeg\\17F501D6-3CF8-4B15-91FE-1BF9F88C836D.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\1DABE66B-BE66-4E48-B44E-7FC1E1DD373C.jpeg\\1DABE66B-BE66-4E48-B44E-7FC1E1DD373C.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\1DABE66B-BE66-4E48-B44E-7FC1E1DD373C.jpeg\\1DABE66B-BE66-4E48-B44E-7FC1E1DD373C.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\1DEF0837-DD20-4D5F-8C80-1186F3B167E2.jpeg\\1DEF0837-DD20-4D5F-8C80-1186F3B167E2.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\1DEF0837-DD20-4D5F-8C80-1186F3B167E2.jpeg\\1DEF0837-DD20-4D5F-8C80-1186F3B167E2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\1E890DC3-F8AA-438C-AC87-02E525C8CB7B.jpeg\\1E890DC3-F8AA-438C-AC87-02E525C8CB7B.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\1E890DC3-F8AA-438C-AC87-02E525C8CB7B.jpeg\\1E890DC3-F8AA-438C-AC87-02E525C8CB7B.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\23EC97C2-3A0C-47ED-AD32-51AF22019EC8.jpeg\\23EC97C2-3A0C-47ED-AD32-51AF22019EC8.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\23EC97C2-3A0C-47ED-AD32-51AF22019EC8.jpeg\\23EC97C2-3A0C-47ED-AD32-51AF22019EC8.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\24F0DF47-14C4-4ACA-9104-954C6B20639F.jpeg\\24F0DF47-14C4-4ACA-9104-954C6B20639F.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\24F0DF47-14C4-4ACA-9104-954C6B20639F.jpeg\\24F0DF47-14C4-4ACA-9104-954C6B20639F.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\2B8199C7-384A-49C3-9EF3-DB9144A3CD2B.jpeg\\2B8199C7-384A-49C3-9EF3-DB9144A3CD2B.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\2B8199C7-384A-49C3-9EF3-DB9144A3CD2B.jpeg\\2B8199C7-384A-49C3-9EF3-DB9144A3CD2B.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\2BA274BA-8BE1-4341-B934-15AF170CB57F.jpeg\\2BA274BA-8BE1-4341-B934-15AF170CB57F.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\2BA274BA-8BE1-4341-B934-15AF170CB57F.jpeg\\2BA274BA-8BE1-4341-B934-15AF170CB57F.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\2CBCE8C0-429D-4217-AB55-5627E2832CD0.jpeg\\2CBCE8C0-429D-4217-AB55-5627E2832CD0.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\2CBCE8C0-429D-4217-AB55-5627E2832CD0.jpeg\\2CBCE8C0-429D-4217-AB55-5627E2832CD0.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\339175B8-9312-4762-B0E4-751E1E34081E.webp\\339175B8-9312-4762-B0E4-751E1E34081E.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\339175B8-9312-4762-B0E4-751E1E34081E.webp\\339175B8-9312-4762-B0E4-751E1E34081E.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\368D4871-E83D-48D8-97E3-9E93282CB244.jpeg\\368D4871-E83D-48D8-97E3-9E93282CB244.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\368D4871-E83D-48D8-97E3-9E93282CB244.jpeg\\368D4871-E83D-48D8-97E3-9E93282CB244.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\390EED4B-7A8B-4C44-9560-872CBCF078CC.png\\390EED4B-7A8B-4C44-9560-872CBCF078CC.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\390EED4B-7A8B-4C44-9560-872CBCF078CC.png\\390EED4B-7A8B-4C44-9560-872CBCF078CC.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\39CB7FE0-8992-4589-8CCB-DFBC0975767B.jpeg\\39CB7FE0-8992-4589-8CCB-DFBC0975767B.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\39CB7FE0-8992-4589-8CCB-DFBC0975767B.jpeg\\39CB7FE0-8992-4589-8CCB-DFBC0975767B.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\3A937EB1-B5E2-46FF-A3C3-4BB20AB05637.jpeg\\3A937EB1-B5E2-46FF-A3C3-4BB20AB05637.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\3A937EB1-B5E2-46FF-A3C3-4BB20AB05637.jpeg\\3A937EB1-B5E2-46FF-A3C3-4BB20AB05637.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\3AD147EF-CE7B-4AFA-A534-3202CF7AB5E1.jpeg\\3AD147EF-CE7B-4AFA-A534-3202CF7AB5E1.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\3AD147EF-CE7B-4AFA-A534-3202CF7AB5E1.jpeg\\3AD147EF-CE7B-4AFA-A534-3202CF7AB5E1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\3B1E7EC9-9828-46FA-8AB8-0A98BF67E5B7.jpeg\\3B1E7EC9-9828-46FA-8AB8-0A98BF67E5B7.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\3B1E7EC9-9828-46FA-8AB8-0A98BF67E5B7.jpeg\\3B1E7EC9-9828-46FA-8AB8-0A98BF67E5B7.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\3CC9954A-E0A3-4DB4-8B31-81B151462547.jpeg\\3CC9954A-E0A3-4DB4-8B31-81B151462547.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\3CC9954A-E0A3-4DB4-8B31-81B151462547.jpeg\\3CC9954A-E0A3-4DB4-8B31-81B151462547.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\3CD1832C-C19E-4D0A-BFE4-B105C3F8340C.jpeg\\3CD1832C-C19E-4D0A-BFE4-B105C3F8340C.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\3CD1832C-C19E-4D0A-BFE4-B105C3F8340C.jpeg\\3CD1832C-C19E-4D0A-BFE4-B105C3F8340C.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\3CE98AA7-F47F-431C-A895-BD159EA10CF0.jpeg\\3CE98AA7-F47F-431C-A895-BD159EA10CF0.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\3CE98AA7-F47F-431C-A895-BD159EA10CF0.jpeg\\3CE98AA7-F47F-431C-A895-BD159EA10CF0.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\453DD1BC-DACB-4172-82D1-23D7FB1C8286.jpeg\\453DD1BC-DACB-4172-82D1-23D7FB1C8286.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\453DD1BC-DACB-4172-82D1-23D7FB1C8286.jpeg\\453DD1BC-DACB-4172-82D1-23D7FB1C8286.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\48ED7D36-17A9-4D0D-A080-5E7C7A55031C.jpeg\\48ED7D36-17A9-4D0D-A080-5E7C7A55031C.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\48ED7D36-17A9-4D0D-A080-5E7C7A55031C.jpeg\\48ED7D36-17A9-4D0D-A080-5E7C7A55031C.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\4942332E-8F28-4D89-85F4-49B5DED00F8F.jpeg\\4942332E-8F28-4D89-85F4-49B5DED00F8F.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\4942332E-8F28-4D89-85F4-49B5DED00F8F.jpeg\\4942332E-8F28-4D89-85F4-49B5DED00F8F.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\4A4B80D9-B67D-4A05-8732-45192C4686FE.jpeg\\4A4B80D9-B67D-4A05-8732-45192C4686FE.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\4A4B80D9-B67D-4A05-8732-45192C4686FE.jpeg\\4A4B80D9-B67D-4A05-8732-45192C4686FE.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\4AEDA159-DA68-4F0A-A9E7-54835DAF76D8.jpeg\\4AEDA159-DA68-4F0A-A9E7-54835DAF76D8.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\4AEDA159-DA68-4F0A-A9E7-54835DAF76D8.jpeg\\4AEDA159-DA68-4F0A-A9E7-54835DAF76D8.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\4B95DE9D-A503-46BE-9145-9B4EE173DBFD.jpeg\\4B95DE9D-A503-46BE-9145-9B4EE173DBFD.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\4B95DE9D-A503-46BE-9145-9B4EE173DBFD.jpeg\\4B95DE9D-A503-46BE-9145-9B4EE173DBFD.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg\\4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg\\4C6BA2F8-D438-4D50-B003-D67A6047A4FB.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\4E2B4A93-6F28-4634-8479-C657AFD6A622.jpeg\\4E2B4A93-6F28-4634-8479-C657AFD6A622.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\4E2B4A93-6F28-4634-8479-C657AFD6A622.jpeg\\4E2B4A93-6F28-4634-8479-C657AFD6A622.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\4F85FE20-A164-49DA-8909-83EC856C29B7.jpeg\\4F85FE20-A164-49DA-8909-83EC856C29B7.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\4F85FE20-A164-49DA-8909-83EC856C29B7.jpeg\\4F85FE20-A164-49DA-8909-83EC856C29B7.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\4FA59CCD-2AF2-493B-840A-91B0E7C97BBC.jpeg\\4FA59CCD-2AF2-493B-840A-91B0E7C97BBC.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\4FA59CCD-2AF2-493B-840A-91B0E7C97BBC.jpeg\\4FA59CCD-2AF2-493B-840A-91B0E7C97BBC.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\54F128BE-0175-440E-AF9C-5545FCAA1797.webp\\54F128BE-0175-440E-AF9C-5545FCAA1797.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\54F128BE-0175-440E-AF9C-5545FCAA1797.webp\\54F128BE-0175-440E-AF9C-5545FCAA1797.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\55272520-E000-495B-88DD-883F94035BE4.jpeg\\55272520-E000-495B-88DD-883F94035BE4.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\55272520-E000-495B-88DD-883F94035BE4.jpeg\\55272520-E000-495B-88DD-883F94035BE4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\56783B9B-4704-40EB-939D-950D01F785A1.jpeg\\56783B9B-4704-40EB-939D-950D01F785A1.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\56783B9B-4704-40EB-939D-950D01F785A1.jpeg\\56783B9B-4704-40EB-939D-950D01F785A1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\5ED98371-82FA-42F0-8D02-8A615330BF3B.jpeg\\5ED98371-82FA-42F0-8D02-8A615330BF3B.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\5ED98371-82FA-42F0-8D02-8A615330BF3B.jpeg\\5ED98371-82FA-42F0-8D02-8A615330BF3B.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\5F4104CD-32F4-4FCA-896C-528080D23404.jpeg\\5F4104CD-32F4-4FCA-896C-528080D23404.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\5F4104CD-32F4-4FCA-896C-528080D23404.jpeg\\5F4104CD-32F4-4FCA-896C-528080D23404.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\6353CE89-14AB-4C5C-BD1B-E707C6C16812.jpeg\\6353CE89-14AB-4C5C-BD1B-E707C6C16812.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\6353CE89-14AB-4C5C-BD1B-E707C6C16812.jpeg\\6353CE89-14AB-4C5C-BD1B-E707C6C16812.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\636DE5F8-B414-4EEF-B635-F4FE55762F82.jpeg\\636DE5F8-B414-4EEF-B635-F4FE55762F82.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\636DE5F8-B414-4EEF-B635-F4FE55762F82.jpeg\\636DE5F8-B414-4EEF-B635-F4FE55762F82.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\64A3FC4C-2BEE-4E64-8364-DC429B557B9A.jpeg\\64A3FC4C-2BEE-4E64-8364-DC429B557B9A.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\64A3FC4C-2BEE-4E64-8364-DC429B557B9A.jpeg\\64A3FC4C-2BEE-4E64-8364-DC429B557B9A.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\65476609-CA4D-4736-8DA7-C851DB254E70.jpeg\\65476609-CA4D-4736-8DA7-C851DB254E70.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\65476609-CA4D-4736-8DA7-C851DB254E70.jpeg\\65476609-CA4D-4736-8DA7-C851DB254E70.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\66818_lock_locked_secure_icon.ico\\66818_lock_locked_secure_icon.ico",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\66818_lock_locked_secure_icon.ico\\66818_lock_locked_secure_icon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\673CA0D6-3A6A-45A6-8CA7-7C74939F0408.jpeg\\673CA0D6-3A6A-45A6-8CA7-7C74939F0408.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\673CA0D6-3A6A-45A6-8CA7-7C74939F0408.jpeg\\673CA0D6-3A6A-45A6-8CA7-7C74939F0408.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\6911385D-E734-4CAD-9C28-F883D1F4D793.jpeg\\6911385D-E734-4CAD-9C28-F883D1F4D793.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\6911385D-E734-4CAD-9C28-F883D1F4D793.jpeg\\6911385D-E734-4CAD-9C28-F883D1F4D793.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\6C4F4715-AEC8-4BC8-99A6-022213C1B4DA.jpeg\\6C4F4715-AEC8-4BC8-99A6-022213C1B4DA.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\6C4F4715-AEC8-4BC8-99A6-022213C1B4DA.jpeg\\6C4F4715-AEC8-4BC8-99A6-022213C1B4DA.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\6E10D323-57AD-4190-A65E-D6F398996D4C.jpeg\\6E10D323-57AD-4190-A65E-D6F398996D4C.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\6E10D323-57AD-4190-A65E-D6F398996D4C.jpeg\\6E10D323-57AD-4190-A65E-D6F398996D4C.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\6E78D311-B17B-43DA-8F9C-81FFAE4A336D.jpeg\\6E78D311-B17B-43DA-8F9C-81FFAE4A336D.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\6E78D311-B17B-43DA-8F9C-81FFAE4A336D.jpeg\\6E78D311-B17B-43DA-8F9C-81FFAE4A336D.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\73F1F426-4C13-40C3-B337-E4ADE664ED1F.jpeg\\73F1F426-4C13-40C3-B337-E4ADE664ED1F.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\73F1F426-4C13-40C3-B337-E4ADE664ED1F.jpeg\\73F1F426-4C13-40C3-B337-E4ADE664ED1F.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\77B40AFC-ED2E-42F6-86BC-62EF84DBEB9E.webp\\77B40AFC-ED2E-42F6-86BC-62EF84DBEB9E.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\77B40AFC-ED2E-42F6-86BC-62EF84DBEB9E.webp\\77B40AFC-ED2E-42F6-86BC-62EF84DBEB9E.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\7F39CB33-18D2-4550-904D-5B3961BF19D5.jpeg\\7F39CB33-18D2-4550-904D-5B3961BF19D5.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\7F39CB33-18D2-4550-904D-5B3961BF19D5.jpeg\\7F39CB33-18D2-4550-904D-5B3961BF19D5.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\7FA9C5F7-028B-445B-B8A5-3AD5A9B8DDFB.jpeg\\7FA9C5F7-028B-445B-B8A5-3AD5A9B8DDFB.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\7FA9C5F7-028B-445B-B8A5-3AD5A9B8DDFB.jpeg\\7FA9C5F7-028B-445B-B8A5-3AD5A9B8DDFB.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\80184121-C990-4901-A9E8-29EBC39009C1.jpeg\\80184121-C990-4901-A9E8-29EBC39009C1.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\80184121-C990-4901-A9E8-29EBC39009C1.jpeg\\80184121-C990-4901-A9E8-29EBC39009C1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\84C4CCA1-A84C-4EFD-8F28-12352662EBED.jpeg\\84C4CCA1-A84C-4EFD-8F28-12352662EBED.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\84C4CCA1-A84C-4EFD-8F28-12352662EBED.jpeg\\84C4CCA1-A84C-4EFD-8F28-12352662EBED.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\86EA96FB-D811-4BD5-92BB-687C12D25427.jpeg\\86EA96FB-D811-4BD5-92BB-687C12D25427.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\86EA96FB-D811-4BD5-92BB-687C12D25427.jpeg\\86EA96FB-D811-4BD5-92BB-687C12D25427.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\8AD6B007-C56E-48EB-9847-0EAD3E5AE205.jpeg\\8AD6B007-C56E-48EB-9847-0EAD3E5AE205.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\8AD6B007-C56E-48EB-9847-0EAD3E5AE205.jpeg\\8AD6B007-C56E-48EB-9847-0EAD3E5AE205.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\8F5F30BC-850E-49E9-9594-A2A2BE2ECCCC.jpeg\\8F5F30BC-850E-49E9-9594-A2A2BE2ECCCC.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\8F5F30BC-850E-49E9-9594-A2A2BE2ECCCC.jpeg\\8F5F30BC-850E-49E9-9594-A2A2BE2ECCCC.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\9004738_lock_security_padlock_secure_icon.png\\9004738_lock_security_padlock_secure_icon.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\9004738_lock_security_padlock_secure_icon.png\\9004738_lock_security_padlock_secure_icon.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\94DAE4C2-2AD0-4142-91FC-BDB050EA6146.jpeg\\94DAE4C2-2AD0-4142-91FC-BDB050EA6146.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\94DAE4C2-2AD0-4142-91FC-BDB050EA6146.jpeg\\94DAE4C2-2AD0-4142-91FC-BDB050EA6146.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\9781847E-2F24-4A44-AF81-CACE95874CEB.webp\\9781847E-2F24-4A44-AF81-CACE95874CEB.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\9781847E-2F24-4A44-AF81-CACE95874CEB.webp\\9781847E-2F24-4A44-AF81-CACE95874CEB.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\990F6267-6598-4DA0-B8D8-3304FBEF4AAD.jpeg\\990F6267-6598-4DA0-B8D8-3304FBEF4AAD.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\990F6267-6598-4DA0-B8D8-3304FBEF4AAD.jpeg\\990F6267-6598-4DA0-B8D8-3304FBEF4AAD.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\9A30F276-D247-49F5-B78F-29509D5A4E1C.jpeg\\9A30F276-D247-49F5-B78F-29509D5A4E1C.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\9A30F276-D247-49F5-B78F-29509D5A4E1C.jpeg\\9A30F276-D247-49F5-B78F-29509D5A4E1C.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\9C8FF230-D7A2-4652-A923-5D87820FBAAC.jpeg\\9C8FF230-D7A2-4652-A923-5D87820FBAAC.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\9C8FF230-D7A2-4652-A923-5D87820FBAAC.jpeg\\9C8FF230-D7A2-4652-A923-5D87820FBAAC.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\A0D7F624-3B12-4AA8-A79F-25499D023BF1.jpeg\\A0D7F624-3B12-4AA8-A79F-25499D023BF1.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\A0D7F624-3B12-4AA8-A79F-25499D023BF1.jpeg\\A0D7F624-3B12-4AA8-A79F-25499D023BF1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\A1A7535D-FD91-4E57-8983-5EAC55E5FDCB.jpeg\\A1A7535D-FD91-4E57-8983-5EAC55E5FDCB.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\A1A7535D-FD91-4E57-8983-5EAC55E5FDCB.jpeg\\A1A7535D-FD91-4E57-8983-5EAC55E5FDCB.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\A1D04011-4700-4FCE-88AA-37A62EB750E1.webp\\A1D04011-4700-4FCE-88AA-37A62EB750E1.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\A1D04011-4700-4FCE-88AA-37A62EB750E1.webp\\A1D04011-4700-4FCE-88AA-37A62EB750E1.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\A2792312-8B2D-43C8-AF40-470137CA5E85.jpeg\\A2792312-8B2D-43C8-AF40-470137CA5E85.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\A2792312-8B2D-43C8-AF40-470137CA5E85.jpeg\\A2792312-8B2D-43C8-AF40-470137CA5E85.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\A7B17628-0F5B-49F0-B7D8-A652ABED7BC0.jpeg\\A7B17628-0F5B-49F0-B7D8-A652ABED7BC0.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\A7B17628-0F5B-49F0-B7D8-A652ABED7BC0.jpeg\\A7B17628-0F5B-49F0-B7D8-A652ABED7BC0.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\AC6436F9-68B0-42E6-AD89-A838AF43D147.jpeg\\AC6436F9-68B0-42E6-AD89-A838AF43D147.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\AC6436F9-68B0-42E6-AD89-A838AF43D147.jpeg\\AC6436F9-68B0-42E6-AD89-A838AF43D147.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\B0629FF9-83A1-43B7-9902-5E5AC1FD00FA.jpeg\\B0629FF9-83A1-43B7-9902-5E5AC1FD00FA.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\B0629FF9-83A1-43B7-9902-5E5AC1FD00FA.jpeg\\B0629FF9-83A1-43B7-9902-5E5AC1FD00FA.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\B13A539F-F74B-47CA-BB95-280441333D53.jpeg\\B13A539F-F74B-47CA-BB95-280441333D53.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\B13A539F-F74B-47CA-BB95-280441333D53.jpeg\\B13A539F-F74B-47CA-BB95-280441333D53.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\B19BF778-CE66-4A74-9E57-BC00D9EEA606.jpeg\\B19BF778-CE66-4A74-9E57-BC00D9EEA606.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\B19BF778-CE66-4A74-9E57-BC00D9EEA606.jpeg\\B19BF778-CE66-4A74-9E57-BC00D9EEA606.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\B465C487-FCC6-483C-B8FB-F811B2059634.jpeg\\B465C487-FCC6-483C-B8FB-F811B2059634.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\B465C487-FCC6-483C-B8FB-F811B2059634.jpeg\\B465C487-FCC6-483C-B8FB-F811B2059634.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\B6D37705-4CD5-443C-84CA-A6FB829951B2.jpeg\\B6D37705-4CD5-443C-84CA-A6FB829951B2.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\B6D37705-4CD5-443C-84CA-A6FB829951B2.jpeg\\B6D37705-4CD5-443C-84CA-A6FB829951B2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\BC693D7D-EAC5-412B-8597-7034B8A8AC4D.jpeg\\BC693D7D-EAC5-412B-8597-7034B8A8AC4D.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\BC693D7D-EAC5-412B-8597-7034B8A8AC4D.jpeg\\BC693D7D-EAC5-412B-8597-7034B8A8AC4D.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\BDC5C6D9-7265-4B14-9198-6AEC41F6336F.jpeg\\BDC5C6D9-7265-4B14-9198-6AEC41F6336F.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\BDC5C6D9-7265-4B14-9198-6AEC41F6336F.jpeg\\BDC5C6D9-7265-4B14-9198-6AEC41F6336F.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\BFEDF9AF-8190-41AD-A613-79AE6972BEE1.jpeg\\BFEDF9AF-8190-41AD-A613-79AE6972BEE1.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\BFEDF9AF-8190-41AD-A613-79AE6972BEE1.jpeg\\BFEDF9AF-8190-41AD-A613-79AE6972BEE1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\C0A6B78E-744F-4D72-A57D-743F0C5FEEA5.jpeg\\C0A6B78E-744F-4D72-A57D-743F0C5FEEA5.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\C0A6B78E-744F-4D72-A57D-743F0C5FEEA5.jpeg\\C0A6B78E-744F-4D72-A57D-743F0C5FEEA5.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\C1A61FA0-309E-44CE-9D10-A7FC8C94D640.webp\\C1A61FA0-309E-44CE-9D10-A7FC8C94D640.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\C1A61FA0-309E-44CE-9D10-A7FC8C94D640.webp\\C1A61FA0-309E-44CE-9D10-A7FC8C94D640.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\C340AFD4-1F89-4942-9FF4-120C142A3207.jpeg\\C340AFD4-1F89-4942-9FF4-120C142A3207.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\C340AFD4-1F89-4942-9FF4-120C142A3207.jpeg\\C340AFD4-1F89-4942-9FF4-120C142A3207.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\C4648E51-41A7-4E87-AA98-596D9558DC9F.jpeg\\C4648E51-41A7-4E87-AA98-596D9558DC9F.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\C4648E51-41A7-4E87-AA98-596D9558DC9F.jpeg\\C4648E51-41A7-4E87-AA98-596D9558DC9F.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\C91548AB-31DD-44A8-BB6F-38D5BFD0D3D7.jpeg\\C91548AB-31DD-44A8-BB6F-38D5BFD0D3D7.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\C91548AB-31DD-44A8-BB6F-38D5BFD0D3D7.jpeg\\C91548AB-31DD-44A8-BB6F-38D5BFD0D3D7.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\CA55AE36-C71D-4763-838C-3DFF7C73834F.jpeg\\CA55AE36-C71D-4763-838C-3DFF7C73834F.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\CA55AE36-C71D-4763-838C-3DFF7C73834F.jpeg\\CA55AE36-C71D-4763-838C-3DFF7C73834F.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\CEEFF5AA-F8C9-41D2-A35A-9289923913C4.jpeg\\CEEFF5AA-F8C9-41D2-A35A-9289923913C4.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\CEEFF5AA-F8C9-41D2-A35A-9289923913C4.jpeg\\CEEFF5AA-F8C9-41D2-A35A-9289923913C4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\CGV-Aeon-Tanbinh.png\\CGV-Aeon-Tanbinh.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\CGV-Aeon-Tanbinh.png\\CGV-Aeon-Tanbinh.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\CGV-Pandora-city.jpeg\\CGV-Pandora-city.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\CGV-Pandora-city.jpeg\\CGV-Pandora-city.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\D2998AE5-F143-4210-A1F8-505A0207339E.png\\D2998AE5-F143-4210-A1F8-505A0207339E.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\D2998AE5-F143-4210-A1F8-505A0207339E.png\\D2998AE5-F143-4210-A1F8-505A0207339E.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\D779F6B0-255D-4F1D-A94E-0ACDB5EB2397.jpeg\\D779F6B0-255D-4F1D-A94E-0ACDB5EB2397.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\D779F6B0-255D-4F1D-A94E-0ACDB5EB2397.jpeg\\D779F6B0-255D-4F1D-A94E-0ACDB5EB2397.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\DAC8DC8E-0F06-42FA-906C-5B7E3A2FAA17.jpeg\\DAC8DC8E-0F06-42FA-906C-5B7E3A2FAA17.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\DAC8DC8E-0F06-42FA-906C-5B7E3A2FAA17.jpeg\\DAC8DC8E-0F06-42FA-906C-5B7E3A2FAA17.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\E15342AB-B19B-44BC-B9A2-AD6396249723.jpeg\\E15342AB-B19B-44BC-B9A2-AD6396249723.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\E15342AB-B19B-44BC-B9A2-AD6396249723.jpeg\\E15342AB-B19B-44BC-B9A2-AD6396249723.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\E4B8DE82-FAEB-4343-8B24-E773058DAE64.jpeg\\E4B8DE82-FAEB-4343-8B24-E773058DAE64.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\E4B8DE82-FAEB-4343-8B24-E773058DAE64.jpeg\\E4B8DE82-FAEB-4343-8B24-E773058DAE64.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\E55CF19C-F127-4251-B3AD-5D14F08BB08A.jpeg\\E55CF19C-F127-4251-B3AD-5D14F08BB08A.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\E55CF19C-F127-4251-B3AD-5D14F08BB08A.jpeg\\E55CF19C-F127-4251-B3AD-5D14F08BB08A.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\E7512C03-2E1D-40B2-A9E4-79FB86C3C007.jpeg\\E7512C03-2E1D-40B2-A9E4-79FB86C3C007.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\E7512C03-2E1D-40B2-A9E4-79FB86C3C007.jpeg\\E7512C03-2E1D-40B2-A9E4-79FB86C3C007.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\EA3696D2-48CC-4367-92C7-762FFF026B59.jpeg\\EA3696D2-48CC-4367-92C7-762FFF026B59.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\EA3696D2-48CC-4367-92C7-762FFF026B59.jpeg\\EA3696D2-48CC-4367-92C7-762FFF026B59.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\EBB9ADAC-0A55-4285-8415-A8EE72E6EB60.jpeg\\EBB9ADAC-0A55-4285-8415-A8EE72E6EB60.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\EBB9ADAC-0A55-4285-8415-A8EE72E6EB60.jpeg\\EBB9ADAC-0A55-4285-8415-A8EE72E6EB60.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\ECD704F1-82A3-42BC-84B2-67F21E26F438.jpeg\\ECD704F1-82A3-42BC-84B2-67F21E26F438.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\ECD704F1-82A3-42BC-84B2-67F21E26F438.jpeg\\ECD704F1-82A3-42BC-84B2-67F21E26F438.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\EDE8CD31-615A-46E1-B9A5-D0E785D26DFC.jpeg\\EDE8CD31-615A-46E1-B9A5-D0E785D26DFC.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\EDE8CD31-615A-46E1-B9A5-D0E785D26DFC.jpeg\\EDE8CD31-615A-46E1-B9A5-D0E785D26DFC.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\F225AEB0-7994-46C9-948E-D7D23D3ACE08.jpeg\\F225AEB0-7994-46C9-948E-D7D23D3ACE08.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\F225AEB0-7994-46C9-948E-D7D23D3ACE08.jpeg\\F225AEB0-7994-46C9-948E-D7D23D3ACE08.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\F2C553E3-A0A5-4C6B-B5B0-170FF8C1F5A7.jpeg\\F2C553E3-A0A5-4C6B-B5B0-170FF8C1F5A7.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\F2C553E3-A0A5-4C6B-B5B0-170FF8C1F5A7.jpeg\\F2C553E3-A0A5-4C6B-B5B0-170FF8C1F5A7.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\F53E5EEA-C3AC-4ACE-BEBE-650B547F3A22.jpeg\\F53E5EEA-C3AC-4ACE-BEBE-650B547F3A22.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\F53E5EEA-C3AC-4ACE-BEBE-650B547F3A22.jpeg\\F53E5EEA-C3AC-4ACE-BEBE-650B547F3A22.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\F6CFEEDA-0B58-492B-B643-1D2C93D6FC7E.jpeg\\F6CFEEDA-0B58-492B-B643-1D2C93D6FC7E.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\F6CFEEDA-0B58-492B-B643-1D2C93D6FC7E.jpeg\\F6CFEEDA-0B58-492B-B643-1D2C93D6FC7E.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\F79E1F4D-A545-47EE-B563-5E6225454ACE.jpeg\\F79E1F4D-A545-47EE-B563-5E6225454ACE.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\F79E1F4D-A545-47EE-B563-5E6225454ACE.jpeg\\F79E1F4D-A545-47EE-B563-5E6225454ACE.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\F87061BC-897D-4CC9-A34E-B6AD23AD6A2B.jpeg\\F87061BC-897D-4CC9-A34E-B6AD23AD6A2B.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\F87061BC-897D-4CC9-A34E-B6AD23AD6A2B.jpeg\\F87061BC-897D-4CC9-A34E-B6AD23AD6A2B.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg\\FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg\\FD79CB19-15F3-49C9-87C5-85E4A8C29930.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\FF4B74AD-177E-493A-8678-19AF9D9A721E.webp\\FF4B74AD-177E-493A-8678-19AF9D9A721E.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\FF4B74AD-177E-493A-8678-19AF9D9A721E.webp\\FF4B74AD-177E-493A-8678-19AF9D9A721E.webp"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\Logo-test.png\\Logo-test.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\Logo-test.png\\Logo-test.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\POSTER-DUN2.jpeg\\POSTER-DUN2.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\POSTER-DUN2.jpeg\\POSTER-DUN2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\POSTER-FIVE.jpeg\\POSTER-FIVE.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\POSTER-FIVE.jpeg\\POSTER-FIVE.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\POSTER-MYPARADE.jpeg\\POSTER-MYPARADE.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\POSTER-MYPARADE.jpeg\\POSTER-MYPARADE.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\POSTER-RETRIBUTION.jpeg\\POSTER-RETRIBUTION.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\POSTER-RETRIBUTION.jpeg\\POSTER-RETRIBUTION.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\POSTER-THENUN.jpeg\\POSTER-THENUN.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\POSTER-THENUN.jpeg\\POSTER-THENUN.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\POSTER-THIENACDOIDAU.jpeg\\POSTER-THIENACDOIDAU.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\POSTER-THIENACDOIDAU.jpeg\\POSTER-THIENACDOIDAU.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\Rectangle 55.png\\Rectangle 55.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\Rectangle 55.png\\Rectangle 55.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\VOUCHER-BUYTICKET.jpeg\\VOUCHER-BUYTICKET.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\VOUCHER-BUYTICKET.jpeg\\VOUCHER-BUYTICKET.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\VOUCHER-MOMO.png\\VOUCHER-MOMO.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\VOUCHER-MOMO.png\\VOUCHER-MOMO.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\VOUCHER-THENUN.jpeg\\VOUCHER-THENUN.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\VOUCHER-THENUN.jpeg\\VOUCHER-THENUN.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\VOUCHER-THU4.png\\VOUCHER-THU4.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\VOUCHER-THU4.png\\VOUCHER-THU4.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\VOUCHER-TUANLEREFILL.jpeg\\VOUCHER-TUANLEREFILL.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\VOUCHER-TUANLEREFILL.jpeg\\VOUCHER-TUANLEREFILL.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\avatar-admin.jpg\\avatar-admin.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\avatar-admin.jpg\\avatar-admin.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\avenger.png\\avenger.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\avenger.png\\avenger.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\harrypotter.jpeg\\harrypotter.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\harrypotter.jpeg\\harrypotter.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\imagenew.jpeg\\imagenew.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\imagenew.jpeg\\imagenew.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\it.png\\it.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\it.png\\it.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\johnwick.jpeg\\johnwick.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\johnwick.jpeg\\johnwick.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\noname.png\\noname.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\noname.png\\noname.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\shark.png\\shark.png",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\shark.png\\shark.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\siperman.jpeg\\siperman.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\siperman.jpeg\\siperman.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\thor.jpeg\\thor.jpeg",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\thor.jpeg\\thor.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.5A3F470E-9435-4897-838C-E5D2EF0AF672.MOV\\trim.5A3F470E-9435-4897-838C-E5D2EF0AF672.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.5A3F470E-9435-4897-838C-E5D2EF0AF672.MOV\\trim.5A3F470E-9435-4897-838C-E5D2EF0AF672.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.67910B63-33A7-4A83-812F-7D37D418F05F.MOV\\trim.67910B63-33A7-4A83-812F-7D37D418F05F.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.67910B63-33A7-4A83-812F-7D37D418F05F.MOV\\trim.67910B63-33A7-4A83-812F-7D37D418F05F.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.72EBFD09-EB75-460E-9E8F-65F3E2612AE3.MOV\\trim.72EBFD09-EB75-460E-9E8F-65F3E2612AE3.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.72EBFD09-EB75-460E-9E8F-65F3E2612AE3.MOV\\trim.72EBFD09-EB75-460E-9E8F-65F3E2612AE3.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.76732313-356D-42B4-88BA-07282E56872A.MOV\\trim.76732313-356D-42B4-88BA-07282E56872A.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.76732313-356D-42B4-88BA-07282E56872A.MOV\\trim.76732313-356D-42B4-88BA-07282E56872A.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.875941DD-CB0A-497F-BABC-4C396EC350A7.MOV\\trim.875941DD-CB0A-497F-BABC-4C396EC350A7.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.875941DD-CB0A-497F-BABC-4C396EC350A7.MOV\\trim.875941DD-CB0A-497F-BABC-4C396EC350A7.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.B4F6C3AB-AC0E-4E32-8DCA-F48524BFABDC.MOV\\trim.B4F6C3AB-AC0E-4E32-8DCA-F48524BFABDC.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.B4F6C3AB-AC0E-4E32-8DCA-F48524BFABDC.MOV\\trim.B4F6C3AB-AC0E-4E32-8DCA-F48524BFABDC.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.B97852D9-3CE2-4E31-9898-AB20585E1EC4.MOV\\trim.B97852D9-3CE2-4E31-9898-AB20585E1EC4.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.B97852D9-3CE2-4E31-9898-AB20585E1EC4.MOV\\trim.B97852D9-3CE2-4E31-9898-AB20585E1EC4.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.BCE46919-C809-4EA2-B83B-9959707FDD13.MOV\\trim.BCE46919-C809-4EA2-B83B-9959707FDD13.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.BCE46919-C809-4EA2-B83B-9959707FDD13.MOV\\trim.BCE46919-C809-4EA2-B83B-9959707FDD13.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.C40E5833-9B83-4FFF-BD00-C80001A079FD.MOV\\trim.C40E5833-9B83-4FFF-BD00-C80001A079FD.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.C40E5833-9B83-4FFF-BD00-C80001A079FD.MOV\\trim.C40E5833-9B83-4FFF-BD00-C80001A079FD.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.E97F3ED5-9FC2-494C-9435-F3BB37985B81.MOV\\trim.E97F3ED5-9FC2-494C-9435-F3BB37985B81.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.E97F3ED5-9FC2-494C-9435-F3BB37985B81.MOV\\trim.E97F3ED5-9FC2-494C-9435-F3BB37985B81.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\trim.EBFB6E9F-F6F5-4889-A2FF-F07914E67014.MOV\\trim.EBFB6E9F-F6F5-4889-A2FF-F07914E67014.MOV",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\trim.EBFB6E9F-F6F5-4889-A2FF-F07914E67014.MOV\\trim.EBFB6E9F-F6F5-4889-A2FF-F07914E67014.MOV"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\Uploads\\Movie\\videotest.mp4\\videotest.mp4",
+      "PackagePath": "staticwebassets\\Uploads\\Movie\\videotest.mp4\\videotest.mp4"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\common\\hinhtest.png",
+      "PackagePath": "staticwebassets\\common\\hinhtest.png"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\common\\logo.jpeg",
+      "PackagePath": "staticwebassets\\common\\logo.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\wwwroot\\common\\noimage.png",
+      "PackagePath": "staticwebassets\\common\\noimage.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyCinema.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MyCinema.props",
+      "PackagePath": "build\\MyCinema.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MyCinema.props",
+      "PackagePath": "buildMultiTargeting\\MyCinema.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MyCinema.props",
+      "PackagePath": "buildTransitive\\MyCinema.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

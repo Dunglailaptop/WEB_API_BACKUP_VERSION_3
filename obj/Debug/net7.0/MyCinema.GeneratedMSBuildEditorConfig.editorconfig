@@ -9,11 +9,19 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyCinema
 build_property.RootNamespace = MyCinema
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\ndung\OneDrive\Desktop\servercinema\WEB_API_BACKUP_VERSION_3\
+=======
+build_property.ProjectDir = D:\APIBACKEND\WEB_API_BACKUP_VERSION_3\
+>>>>>>> 59fab48c97f64276fbe65ccbc644f9bff2064425
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<< HEAD
 build_property.MSBuildProjectDirectory = C:\Users\ndung\OneDrive\Desktop\servercinema\WEB_API_BACKUP_VERSION_3
+=======
+build_property.MSBuildProjectDirectory = D:\APIBACKEND\WEB_API_BACKUP_VERSION_3
+>>>>>>> 59fab48c97f64276fbe65ccbc644f9bff2064425
 build_property._RazorSourceGeneratorDebug = 
