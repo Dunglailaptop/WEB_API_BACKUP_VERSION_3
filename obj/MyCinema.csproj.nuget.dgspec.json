@@ -1,25 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/MyCinema.csproj": {}
+    "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\MyCinema.csproj": {}
   },
   "projects": {
-    "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/MyCinema.csproj": {
+    "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\MyCinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/MyCinema.csproj",
+        "projectUniqueName": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\MyCinema.csproj",
         "projectName": "MyCinema",
-        "projectPath": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/MyCinema.csproj",
-        "packagesPath": "/Users/nguyenxuantiendung/.nuget/packages/",
-        "outputPath": "/Users/nguyenxuantiendung/Documents/WEB_API_BACKUP_VERSION_3_NEW/WEB_API_BACKUP_VERSION_3/obj/",
+        "projectPath": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\MyCinema.csproj",
+        "packagesPath": "C:\\Users\\ndung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ndung\\OneDrive\\Desktop\\servercinema\\WEB_API_BACKUP_VERSION_3\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/nguyenxuantiendung/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ndung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +42,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -104,6 +119,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -112,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
